@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="memberLayout" template="/WEB-INF/views/common/member/member_layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/common/member/header.jsp"></put-attribute>
+		<put-attribute name="side" value="/WEB-INF/views/common/member/side.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/common/member/footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/member/loginForm" extends="memberLayout">
+		<put-attribute name="title" value="로그인페이지"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
