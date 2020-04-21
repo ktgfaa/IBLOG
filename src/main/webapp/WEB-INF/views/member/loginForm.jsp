@@ -12,9 +12,9 @@
 <body>
 	<div class="loginForm">
 			<p>IBLOG LOGIN</p>
-			<form name="IBlogin" action="/login">
-				<input type="text" name="username" placeholder="ID"/><br>
-				<input type="password" name="password" placeholder="PASSWORD"/><br>
+			<form name="IBlogin" action="${contextPath }/member/login.do">
+				<input type="text" name="id" placeholder="ID"/><br>
+				<input type="password" name="pwd" placeholder="PASSWORD"/><br>
 				<input type="submit" value="로그인" id="loginBtn"/><br>
 				<ul>
 					<li style="margin-left: 260px;"><a href="#">아이디</a></li>

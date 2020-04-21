@@ -13,7 +13,17 @@
 <body>
 	<div id="container">
 		<div id="content">
+			<tiles:insertAttribute name="header" />
+		</div>
+	</div>
+	<div id="container">
+		<div id="content">
 			<tiles:insertAttribute name="body" />
+		</div>
+	</div>
+	<div id="container">
+		<div id="content">
+			<tiles:insertAttribute name="footer" />
 		</div>
 	</div>
 </body>

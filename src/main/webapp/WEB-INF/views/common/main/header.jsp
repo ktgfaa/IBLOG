@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${contextPath }/resources/css/member/memberHeader.css" rel="stylesheet" type="text/css">
+<link href="${contextPath }/resources/css/main/mainHeader.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>헤더</title>
 <link
@@ -35,13 +35,18 @@
 				<li class="List"><a href="#">검색</a></li>
 			</ul>
 			<ul class="memberList">
-				<li style="float: left;"><button title="로그인" id="login">로그인</button></li>
-				<li style="float: right;"><button title="회원가입" id="user">회원가입</button></li>
+				<li style="float: left;"><button title="로그인" id="login" onclick="loginForm()">로그인</button></li>
+				<li style="float: right;"><button title="회원가입" id="user" >회원가입</button></li>
 			</ul>
 		</div>
 	</div>
 
 </body>
+<script>
+	function loginForm(){
+		location.href="/iblog/member/loginForm.do";
+	}
+</script>
 </html>
 
 

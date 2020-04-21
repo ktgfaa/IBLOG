@@ -1,12 +1,13 @@
 	.loginForm {
-		position: fixed;
-	    width: 500px;
-	    top: 0;
-	    text-align: center;
-	    background-color: #0000000a;
-		margin-top: 220px;
-   	 	margin-left: 440px;
-    	margin-right: 419px;
+    width: 500px;
+    top: 0;
+    text-align: center;
+    background-color: #0000000a;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
 	}
 	.loginForm > p {
 	font-size: 40px;

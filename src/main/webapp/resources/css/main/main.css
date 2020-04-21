@@ -1,0 +1,144 @@
+	body {
+		margin:0;
+		padding:0;
+	}
+	.noticeForm {
+		width: 660px;
+   	 	height: 697px;
+    	float: left;
+    	cursor : pointer;
+	}
+	
+	.otherForm {
+		width: 660px;
+    	height: 697px;
+    	display: inline-block;
+	}
+	
+	  .memberForm{
+	    width: 689px;
+	    height: 230px; 	
+	    cursor : pointer;
+	  }
+	  
+	  .tagForm{
+	    width: 689px;
+	    height: 230px;   
+	    cursor : pointer;	
+	  }
+	  
+	  .popularForm{
+	    width: 689px;
+	    height: 235px;   
+	    cursor : pointer;	
+	  }
+	
+	.opacity{
+    	width: 660px;
+    	height: 697px;
+    	opacity: 0.9;
+    	position: absolute;
+    	top: 0;
+	}
+	.opacity:hover {
+		width: 660px;
+    	height: 697px;
+    	opacity: 0.9;
+    	background-color: #00000045;
+    	top: 0;
+  }
+  
+  	.opacity2{
+    	width: 689px;
+    	height: 230px;
+    	opacity: 0.9;
+	}
+	.opacity2:hover {
+    	width: 689px;
+    	height: 230px;
+    	opacity: 0.9;
+    	background-color: #00000045;
+  }
+  
+  	.opacity3{
+    	width: 689px;
+    	height: 230px;
+    	opacity: 0.9;
+	}
+	.opacity3:hover {
+    	width: 689px;
+    	height: 230px;
+    	opacity: 0.9;
+    	background-color: #00000045;
+  }
+  
+  	.opacity4{
+    	width: 689px;
+    	height: 235px;
+    	opacity: 0.9;
+	}
+	.opacity4:hover {
+    	width: 689px;
+    	height: 235px;
+    	opacity: 0.9;
+    	background-color: #00000045;
+  }
+  .noticeNum {
+  	margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    position: absolute;
+    bottom: 50px;
+    left: 480px;
+    
+  }	
+  
+  .noticeNum > li {
+  	margin-right : 10px;
+  	float : left;
+  	
+  }
+  
+  .noticeNum > li > button {
+  	border-radius: 100px 100px 100px 100px;
+  	background-color: black;
+    border-color: black;
+  }
+  
+  .noticeNum > li > button:hover {
+  	border-radius: 100px 100px 100px 100px;
+  	background-color: gray;
+  	border-color: gray;
+  }
+  
+  .mainLogo{
+  	position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+  }
+  
+   .loginLogo{
+  	position: fixed;
+    z-index: 100;
+	right: 20px;
+    top: 20px;
+  }
+  
+  .loginLogo > button {
+  	width: 97px;
+    height: 35px;
+    border: none;
+    background-color: #fff92d;
+    border-radius: 10px 10px 10px 10px;
+    
+  }
+  
+  .loginLogo > button > strong {
+  	cursor: pointer;
+  }
+  
+   .loginLogo > button:hover {
+  	background-color: #fb08d1;
+  }

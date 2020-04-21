@@ -1,0 +1,93 @@
+.TopDIV {
+	background-image: url('/iblog/resources/image/TopImage.png');
+	height: 903px;
+	width: 1920px;
+	background-size: cover;
+}
+
+.logoDiv {
+	height: 68px;
+	border-bottom: 1px solid;
+	border-color: #ea9eef;
+}
+
+#mainLogo {
+	height: 45px;
+	cursor: pointer;
+}
+
+.ListUL {
+	margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 795px;
+    height: 67px;
+}
+
+.ListUL>li {
+	float: left;
+	padding-right: 50px;
+	padding-left: 50px;
+	border-right: 1px solid;
+	border-color: #ea9eef;
+	height: 24px;
+}
+
+.ListUL>li>a {
+	font-size: 22px;
+	text-decoration: none;
+	color: #0084b7;
+	font-family: 'Stylish', sans-serif;
+}
+
+.memberList {
+    height: 67px;
+    width: 300px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: -100px;
+    top: 0;
+}
+
+.memberList>li {
+	margin-top: 28px;
+	margin-left: 12px;
+	margin-right: 10px;
+}
+
+.memberList>li>button {
+	color: #0084b7;
+	font-size: 16px;
+	border: none;
+	border-radius: 10px 10px 10px 10px;
+	width: 100px;
+	height: 34px;
+	cursor: pointer;
+	font-family: 'Stylish', sans-serif;
+}
+
+#login {
+	background-color: #efcae0;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user {
+	background-color: #ffff00a6;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user:hover {
+	background-color: #ffff0000;
+}
+
+#login:hover {
+	background-color: #ffff0000;
+}
+
+.List {
+	margin-top: 34px;
+}
