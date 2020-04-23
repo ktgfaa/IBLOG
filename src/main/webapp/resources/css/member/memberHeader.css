@@ -1,7 +1,9 @@
 .TopDIV {
 	background-image: url('/iblog/resources/image/TopImage.png');
-	height: 903px;
-	width: 1920px;
+	min-height: 677px;
+    height: 868px;
+	min-width: 100%;
+    margin: 0 auto;
 	background-size: cover;
 }
 
@@ -47,7 +49,7 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    right: -100px;
+    right:0;
     top: 0;
 }
 

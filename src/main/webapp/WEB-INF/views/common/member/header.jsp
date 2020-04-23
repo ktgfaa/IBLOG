@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="${contextPath }/resources/css/member/memberHeader.css" rel="stylesheet" type="text/css">
+<link href="${contextPath }/resources/css/member/memberHeader.css?after" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>헤더</title>
 <link

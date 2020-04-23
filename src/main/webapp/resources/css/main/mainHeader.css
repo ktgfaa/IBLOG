@@ -1,7 +1,8 @@
 .TopDIV {
 	background-image: url('/iblog/resources/image/TopImage.png');
 	height: 68px;
-	width: 1920px;
+	min-width: 100%;
+    margin: 0 auto;
 	background-size: cover;
 }
 
@@ -41,13 +42,13 @@
 }
 
 .memberList {
-    height: 67px;
-    width: 300px;
+	height: 67px;
+    width: 264px;
     list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
-    right: -100px;
+    right: 0px;
     top: 0;
 }
 
