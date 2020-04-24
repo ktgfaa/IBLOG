@@ -39,6 +39,26 @@
 				<li style="float: right;"><button title="회원가입" id="user" >회원가입</button></li>
 			</ul>
 		</div>
+		
+		<div class="notice_Div">
+			<div class="notice_Form">
+				<div class="notice_List">
+					<ul>
+					<li><button id="first_notice">공지사항</button></li>
+					<c:forEach var="notice" begin="1" end="6">
+						<li><button>공지사항</button></li>
+					</c:forEach>
+					<li><button id="last_notice">공지사항</button></li>
+					</ul>
+				</div>
+			
+				<div class="notice_Image">
+					<img src="${contextPath }/resources/image/notice1.png"/>
+					<h2>자신만의 블로그를 만들어 보세요<br>
+					<button>바로가기</button></h2>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </body>

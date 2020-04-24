@@ -16,24 +16,39 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 </head>
 <body>
-	<div class="mainForm">
-		<div class="notice_Form">
-			<div class="notice_List">
+	<div class="mainForm">	
+		<div class="tag_Form">
+			<h1>#태그로</h1>
+			<h2>원하는 블로그를 손쉽게 찾아보세요</h2>
+			<div class="tag_List">
 				<ul>
-				<li><button id="first_notice">공지사항</button></li>
-				<c:forEach var="notice" begin="1" end="6">
-					<li><button>공지사항</button></li>
-				</c:forEach>
-				<li><button id="last_notice">공지사항</button></li>
+					<li><button>#맛집</button></li>
+					<li><button>#여행</button></li>
+					<li><button>#웹개발</button></li>
+					<li><button>#Java</button></li>
+					<li><button>#카페</button></li>
+					<li><button>#게임</button></li>
+					<li><button>#토픽</button></li>
 				</ul>
-			</div>
-			<div class="notice_Image">
-				<img src="${contextPath }/resources/image/notice1.png"/>
-				<h2>자신의 블로그를 만들어 보세요<br>
-				<button>바로가기</button></h2>
-				
+				<div>
+					<img src="${contextPath }/resources/image/tag1.jpg" />	
+				</div>
 			</div>
 		</div>
+		
+		<div class="popular_Form">
+			<h1>인기있는</h1>
+			<h2>블로그를 한눈에 볼수있어요</h2>
+			<div class="popular_List">
+				<a href="#">
+					<div class="wrap_thumb">
+						<img src="${contextPath }/resources/image/popular1.jpg"/>
+					</div>
+					<div class="info_exam"></div>
+				</a>
+			</div>
+		</div>
+		
 	</div>
 <script type="text/javascript">
 </script>
