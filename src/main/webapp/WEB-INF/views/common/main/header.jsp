@@ -39,26 +39,36 @@
 				<li style="float: right;"><button title="회원가입" id="user" >회원가입</button></li>
 			</ul>
 		</div>
-		
-		<div class="notice_Div">
-			<div class="notice_Form">
-				<div class="notice_List">
-					<ul>
-					<li><button id="first_notice">공지사항</button></li>
-					<c:forEach var="notice" begin="1" end="6">
-						<li><button>공지사항</button></li>
-					</c:forEach>
-					<li><button id="last_notice">공지사항</button></li>
-					</ul>
+		<div>
+			<div class="total_blog">
+				<h1 class="total_com to">총</h1>
+				<h1 class="total_com num">100,000</h1>
+				<h1 class="total_com com">개의 IBLOG 사이트</h1>
+			</div>
+			<div class="search_input_div">
+				<div class="input_div_span">
+					<span>검색 필터를 통해 원하는 블로그를 찾아보세요!!</span>
 				</div>
-			
-				<div class="notice_Image">
-					<img src="${contextPath }/resources/image/notice1.png"/>
-					<h2>자신만의 블로그를 만들어 보세요<br>
-					<button>바로가기</button></h2>
+				<div class="input_div_img">
+						<select>
+							<option>전체</option>
+						</select>
+						<input type="text" placeholder="Search" />
+						<img src="${contextPath }/resources/image/main/main_search/search.png"/>
 				</div>
 			</div>
+			<div class="hot_search">
+				<span>Currently Popular Searches</span>
+				<ul>
+					<li><button>코로나19</button></li>
+					<li><button>맛집</button></li>
+					<li><button>제주도</button></li>
+					<li><button>게임</button></li>
+					<li style="margin:0;"><button>Java</button></li>
+				</ul>
+			</div>
 		</div>
+
 	</div>
 
 </body>

@@ -93,103 +93,113 @@
 	margin-top: 34px;
 }
 
-.notice_Div {
-	width: 100%;
-    height: 700px;
-}
-
-.notice_Form {
-	width: 1300px;
-    height: 700px;
+.total_blog , .search_input_div , .hot_search {
+	width: 1000px;
+    text-align: center;
     margin: 0 auto;
+    margin-top: 3%;
+    height: 100px;
 }
-#first_notice {
-	border-radius: 20px 0px 0px 0px;
+
+.total_blog {
+	height: 80px;
 }
-#last_notice {
-	border-radius: 0px 0px 0px 20px;
+.search_input_div {
+	margin-top : 5%;
 }
-	
-.notice_List {
-    width: 250px;
+
+.total_blog > .total_com {
+	font-family: 'Stylish', sans-serif;
+    font-size: 45px;
+    float : left;
+}
+
+.total_blog > .num {
+    color : #fd94a7;
+    margin-left : 3%;
+}
+
+.total_blog > .to {
+    margin-left : 24%;
+}
+
+.total_blog > .com {
+    margin-left : 2%;
+}
+
+.search_input_div > .input_div_span {
+	width: 1000px;
     float: left;
-    margin-top: 4%;
-    background: linear-gradient(#f47dcc,#a7daf7);
-	box-shadow: 27px 20px 20px -3px #0202027d;
-    border-radius: 20px 0px 0px 20px;
 }
 
-.notice_List > ul {
-	list-style: none;
-    text-align: center;
+.input_div_span > span {
+	font-family: 'Stylish', sans-serif;
+    font-size: 17px;
+}
+
+.input_div_img > select {
+	position: absolute;
+    bottom: 0;
+    left:0;
+	width: 165px;
+    height: 56px;
+    font-family: 'Stylish', sans-serif;
+    font-size : 20px;
+}
+
+.input_div_img > input {
+	position: absolute;
+    bottom: 0;
+    left: 20%;
     margin: 0;
+    width: 750px;
+    height: 50px;
+    font-size : 15px;
+}
+
+
+.hot_search > ul {
+	margin: 0 auto;
+    list-style: none;
     padding: 0;
+    margin-top: 2%;
+    width: 700px;
+    height: 30px;
 }
 
-.notice_List > ul > li {
-	height: 50px;
+.hot_search > ul > li {
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-right: 7%;
 }
 
-.notice_List > ul > li > button {
-	width: 100%;
-    height: 100%;
-    background-color: #00000054;
-    border: none;
-    color: black;
-    border: 1px solid;
-    font-size: 20px;
+.hot_search > ul > li > button {
+	width: 100px;
+    height: 30px;
+    border: 1px solid #000000;
+    background-color: #9ce0f97a;
+    font-size: 17px;
     font-family: 'Stylish', sans-serif;
+    cursor : pointer;
 }
 
-.notice_List > ul > li > button:hover {
-	background-color: #ffffff00;
-	cursor : pointer;
+.hot_search > span {
+	font-size: 25px;
+	font-family: 'Stylish', sans-serif;
 }
 
-.notice_Image {
-    width: 1050px;
-    float: right;
-    height: 400px;
-    margin-top: 4%;
-    background: linear-gradient(#f47dcc,#a7daf7);
-    box-shadow: 20px 20px 20px -3px #0202027d;
-    border-radius: 0px 20px 20px 0px;
+.input_div_img {
+	position: absolute;
+    width: 1000px;
+    height: 80px;
+    margin-top: 1%;
 }
 
-.notice_Image > img {
-	width: 500px;
-    height: 300px;
-    margin: 50 50 50 50;
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 50px;
-    margin-top: 50px;
-}
-
-.notice_Image > h2 {
-	margin: 0;
-    float: right;
-    margin-top: 13%;
-    margin-right: 6%;
-    font-family: 'Stylish', sans-serif;
-    font-size: 30px;
-}
-
-.notice_Image > h2 >button {
-    margin: 0;
-    float: right;
-    margin-top: 13%;
-    margin-right: 33%;
-    font-family: 'Stylish', sans-serif;
-    font-size: 30px;
-    border: none;
-    background-color: #807f9d;
-    border-radius: 20px 20px 20px 20px;
-    width: 130px;
-    text-align: center;
-    border:1px solid;
-}
-
-.notice_Image > h2 >button:hover {
-	background-color: #ffffff00;
-	cursor : pointer;
+.input_div_img > img {
+	position: absolute;
+	width: 40px;
+    left: 90%;
+    bottom: 8%;
+    cursor:pointer;
 }

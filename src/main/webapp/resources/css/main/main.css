@@ -4,23 +4,132 @@ body {
 	background-color: #a7d0f221;
 }
 
+.notice_Div {
+	width: 100%;
+    height: 700px;
+    margin-top: 10%;
+}
+
+.notice_Form {
+	width: 1300px;
+    height: 700px;
+    margin: 0 auto;
+}
+#first_notice {
+	border-radius: 20px 0px 0px 0px;
+}
+#last_notice {
+	border-radius: 0px 0px 0px 20px;
+}
+	
+.notice_List {
+    width: 250px;
+    float: left;
+    margin-top: 4%;
+    background: linear-gradient(#f47dcc,#a7daf7);
+	box-shadow: 27px 20px 20px -3px #0202027d;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.notice_Form > h1 {
+	color : black;
+	font-size: 50px;
+    font-family: 'Stylish', sans-serif;
+}
+
+
+.notice_List > ul {
+	list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.notice_List > ul > li {
+	height: 50px;
+}
+
+.notice_List > ul > li > button {
+	width: 100%;
+    height: 100%;
+    background-color: #00000054;
+    border: none;
+    color: black;
+    border: 1px solid;
+    font-size: 20px;
+    font-family: 'Stylish', sans-serif;
+}
+
+.notice_List > ul > li > button:hover {
+	background-color: #ffffff00;
+	cursor : pointer;
+}
+
+.notice_Image {
+    width: 1050px;
+    float: right;
+    height: 400px;
+    margin-top: 4%;
+    background: linear-gradient(#f47dcc,#a7daf7);
+    box-shadow: 20px 20px 20px -3px #0202027d;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.notice_Image > img {
+	width: 500px;
+    height: 300px;
+    margin: 50 50 50 50;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.notice_Image > h2 {
+	margin: 0;
+    float: right;
+    margin-top: 13%;
+    margin-right: 6%;
+    font-family: 'Stylish', sans-serif;
+    font-size: 30px;
+}
+
+.notice_Image > h2 >button {
+    margin: 0;
+    float: right;
+    margin-top: 13%;
+    margin-right: 33%;
+    font-family: 'Stylish', sans-serif;
+    font-size: 30px;
+    border: none;
+    background-color: #807f9d;
+    border-radius: 20px 20px 20px 20px;
+    width: 130px;
+    text-align: center;
+    border:1px solid;
+}
+
+.notice_Image > h2 >button:hover {
+	background-color: #ffffff00;
+	cursor : pointer;
+}
+
 .tag_Form {
     margin: 0 auto;
     width: 100%;
     height: 1100px;
     margin-top: 12%;
-    text-align: center;
-    background-color: white;
 }
 
 .tag_Form > h1 {
 	font-size : 50px;
 	padding-top: 5%;
+	padding-left: 15%;
 }
 
 .tag_Form > h2 {
 	font-family: 'Stylish', sans-serif;
-	font-size : 45px
+	font-size : 45px;
+	padding-left: 15%;
 }
 
 .tag_List > ul {
@@ -66,15 +175,130 @@ body {
     width: 100%;
     height: 800px;
     margin-top: 15%;
-    background-color: white;
 }
 
 .popular_Form > h1 {
 	font-size : 50px;
 	padding-top: 5%;
+	padding-left: 15%;
 }
 
 .popular_Form > h2 {
 	font-family: 'Stylish', sans-serif;
 	font-size : 45px;
+	padding-left: 15%;
+}
+
+.popular_List {
+	width : 100%;
+	height : 450px;
+	position : relative;
+	overflow: hidden;
+}
+
+.popular_DIV {
+	width: 5500px;
+    height: 450px;
+    min-width: 1600px;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    transition: width 1s ease 0.2s, margin-left 0.5s ease-out 0.2s;
+}
+
+.popular_DIV > a {
+	float: left;
+	margin-left : 1%;
+	height : 450px;
+}
+
+.wrap_thumb {
+	position: relative;
+    width: 528px;
+    height: 450px;
+    
+}
+
+.wrap_thumb > img {
+	height: 400px;
+    width: 527px;
+    box-shadow: 7px 7px 20px 0px #00000061;
+}
+
+.info_exam {
+	position: absolute;
+    top: 0;
+    width: 528px;
+    height: 400px;
+    background-color: #00000070;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.info_exam > h1 {
+	position: absolute;
+    width: 250px;
+    top: 1%;
+    left: 1%;
+    color: white;
+    font-family: 'Stylish', sans-serif;
+    font-size: 30px;
+    margin-left: 5%;
+}
+
+.popular_DIV > a:hover .info_exam {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info_exam >p {
+    position: absolute;
+    width: 500px;
+    top: 40%;
+    color: white;
+    font-family: 'Stylish', sans-serif;
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+.before_BTN {
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.next_BTN {
+	width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.arrow_btn > button {
+	background-color: #00000000;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 40px 40px 40px 40px;
+    margin-left: 35%;
+    margin-top: 85%;
+    visibility: hidden;
+}
+
+.arrow_btn:hover .arrow{
+	visibility: visible;
+}
+
+.arrow_btn > button:hover {
+	background-color: #3ff3f37a;
+	cursor: pointer;
+}
+
+
+.arrow_btn > button > img {
+	width: 30px;
+    height: 30px;
 }
