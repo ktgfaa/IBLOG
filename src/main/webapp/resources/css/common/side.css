@@ -1,0 +1,56 @@
+.left_fix_menu {
+	position: fixed;
+    width: 80px;
+    left: 0;
+    top: 25%;
+    text-align: center;
+    z-index:100;
+}
+
+#quick {
+	visibility:visible;
+    opacity:1;
+	font-family: 'Stylish', sans-serif;
+    font-size : 20px;
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+    margin: 0;
+    border: 1px dashed #79ceee;
+    background-color: pink;
+}
+
+
+.left_fix_menu > ul {
+	margin : 0;
+	padding : 0;
+	list-style: none;
+	visibility:hidden;
+    opacity:0;
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+
+}
+
+.left_fix_menu:hover #quick_menu{
+	visibility:visible;
+    opacity:1;
+}
+
+.left_fix_menu:hover #quick{
+	visibility:hidden;
+    opacity:0;
+}
+
+.left_fix_menu > ul > li > a > button {
+	width: 80px;
+    height: 50px;
+    border: 1px dashed #79ceee;
+    background-color: #f592a370;
+    font-family: 'Stylish', sans-serif;
+    font-size : 20px;
+    cursor : pointer;
+}
+
+
+#folding_BTN {
+	height: 30px;
+    background-color: #fb728a;
+}

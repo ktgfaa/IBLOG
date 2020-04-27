@@ -12,17 +12,16 @@
 </head>
 <body>
 	<div id="container">
-		<div id="content">
+		<div id="header">
 			<tiles:insertAttribute name="header" />
 		</div>
-	</div>
-	<div id="container">
+		<div id="sidebar-left">
+			<tiles:insertAttribute name="side" />
+		</div>
 		<div id="content">
 			<tiles:insertAttribute name="body" />
 		</div>
-	</div>
-	<div id="container">
-		<div id="content">
+		<div id="footer">
 			<tiles:insertAttribute name="footer" />
 		</div>
 	</div>

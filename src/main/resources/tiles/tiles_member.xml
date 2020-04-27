@@ -7,14 +7,17 @@
 	<definition name="memberLayout" template="/WEB-INF/views/common/member/member_layout.jsp">
 		<put-attribute name="title" value=""></put-attribute>
 		<put-attribute name="header" value="/WEB-INF/views/common/member/header.jsp"></put-attribute>
-		<put-attribute name="side" value="/WEB-INF/views/common/member/side.jsp"></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
-		<put-attribute name="footer" value="/WEB-INF/views/common/member/footer.jsp"></put-attribute>
 	</definition>
 	
 	<definition	name="/member/loginForm" extends="memberLayout">
-		<put-attribute name="title" value="로그인페이지"></put-attribute>
+		<put-attribute name="title" value="로그인"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp"></put-attribute>
 	</definition>
+	
+	<definition	name="/member/joinForm" extends="memberLayout">
+		<put-attribute name="title" value="회원가입"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/joinForm.jsp"></put-attribute>
+	</definition>	
 	
 </tiles-definitions>
