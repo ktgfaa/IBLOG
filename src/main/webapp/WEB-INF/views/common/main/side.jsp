@@ -18,7 +18,7 @@
 		<ul id="quick_menu">
 			<li class="hide_BTN"><a href="${contextPath }/main.do"><button>HOME</button></a></li>
 			<li class="hide_BTN"><a href="${contextPath }/member/loginForm.do"><button>로그인</button></a></li>
-			<li class="hide_BTN"><a href="#"><button>회원가입</button></a></li>
+			<li class="hide_BTN"><a href="${contextPath }/member/TOSForm.do"><button>회원가입</button></a></li>
 			<li class="hide_BTN"><a href="#"><button>인기</button></a></li>
 			<li class="hide_BTN"><a href="#"><button>태그</button></a></li>
 			<li class="hide_BTN"><a href="#"><button>공지사항</button></a></li>

@@ -36,7 +36,7 @@
 			</ul>
 			<ul class="memberList">
 				<li style="float: left;"><a href="${contextPath }/member/loginForm.do"><button title="로그인" id="login">로그인</button></a></li>
-				<li style="float: right;"><a href="${contextPath }/member/joinForm.do"><button title="회원가입" id="user" >회원가입</button></a></li>
+				<li style="float: right;"><a href="${contextPath }/member/TOSForm.do"><button title="회원가입" id="user" >회원가입</button></a></li>
 			</ul>
 		</div>
 		<div>

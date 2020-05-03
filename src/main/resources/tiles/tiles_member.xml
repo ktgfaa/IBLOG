@@ -15,6 +15,16 @@
 		<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp"></put-attribute>
 	</definition>
 	
+	<definition	name="/member/TOSForm" extends="memberLayout">
+		<put-attribute name="title" value="이용약관"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/TOSForm.jsp"></put-attribute>
+	</definition>	
+	
+	<definition	name="/member/identityForm" extends="memberLayout">
+		<put-attribute name="title" value="본인인증"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/identityForm.jsp"></put-attribute>
+	</definition>	
+	
 	<definition	name="/member/joinForm" extends="memberLayout">
 		<put-attribute name="title" value="회원가입"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/member/joinForm.jsp"></put-attribute>

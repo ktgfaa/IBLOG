@@ -12,7 +12,7 @@
 <body>
 	<div class="loginForm">
 			<p>IBLOG LOGIN</p>
-			<form name="IBlogin" action="${contextPath }/member/login.do">
+			<form name="IBlogin" action="${contextPath }/member/login.do" method="post">
 				<input type="text" name="id" placeholder="ID"/><br>
 				<input type="password" name="pwd" placeholder="PASSWORD"/><br>
 				<input type="submit" value="로그인" id="loginBtn"/><br>
