@@ -1,0 +1,103 @@
+.mypageForm_DIV {
+	width: 100%;
+	height: 1000px;
+	display: flex;
+	background-color: #f1faff;
+}
+
+.mypage_DISDIV {
+	width: 65%;
+	height: 100%;
+	padding: 100px;
+	padding-left: 29%;
+}
+
+.run_IBLOG_DIV{
+	width: 100%;
+	height: 300px;
+	font-size: 22px;
+	font-family: 'Stylish', sans-serif;
+	color: #0084b7;
+}
+
+.mypage_DISDIV>div>div>ul {
+	width: 100%;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	list-style: none;
+	border: 1px solid;
+	border-color: #969296;
+}
+
+.run_IBLOG_DIV>div>ul>li>button {
+	float: right;
+	width: 200px;
+	height: 40px;
+	margin-top: 13px;
+	margin-right: 50px;
+	background-color: #000000e0;
+	color: #0084b7;
+	font: unset;
+	border:none;
+	cursor:pointer;
+}
+
+.run_IBLOG_DIV>div>form {
+	text-align: center;
+	width: 100%;
+	height: 200px;
+	background-color: white;
+	border: 1px solid;
+	border-color: #969296;
+}
+
+#nowPas {
+	width: 400px;
+	height: 30px;
+	margin-top: 80px;
+}
+
+#PasC {
+	width: 400px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+#nowsub {
+	width: 90px;
+	height: 35px;
+	border: none;
+	background-color: pink;
+	margin-left: 50px;
+	font-family: 'Stylish', sans-serif;
+	cursor: pointer;
+}
+
+#nowsub2 {
+	width: 90px;
+	height: 35px;
+	border: none;
+	background-color: pink;
+	margin-left: 50px;
+	font-family: 'Stylish', sans-serif;
+	cursor: pointer;
+}
+
+
+.run_IBLOG_DIV>div>form>ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.run_IBLOG_DIV>div>form>ul>li {
+	margin-top: 30px;
+}
+
+.infoMember_UL > li > input {
+	width: 300px;
+	margin-left: 50px;
+    height: 30px;
+}

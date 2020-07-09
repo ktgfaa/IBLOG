@@ -1,5 +1,6 @@
 	.loginForm {
     width: 500px;
+    height: 400px;
     top: 0;
     text-align: center;
     background-color: #0000000a;
@@ -10,8 +11,9 @@
     margin-top: -150px;
 	}
 	.loginForm > p {
-	font-size: 40px;
-    margin-top: 0;
+    font-size: 40px;
+    margin-top: 7%;
+    margin-bottom: 14%;
     font-family: 'Stylish', sans-serif;
     color: darkblue;
 	}

@@ -1,0 +1,75 @@
+#content {
+	width: 72%;
+    min-height: 900px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.mypageForm_DIV {
+	width: 100%;
+	min-height: 1300px;
+	display: flex;
+}
+
+.mypage_DISDIV {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.run_IBLOG_DIV {
+	width: 100%;
+	margin-bottom: 15%;
+	font-size: 22px;
+	font-family: 'Stylish', sans-serif;
+	color: #0084b7;
+}
+
+.run_IBLOG_DIV>div>form {
+	width: 100%;
+	height: 200px;
+	background-color: white;
+	border: 1px solid;
+	border-color: #969296;
+}
+
+.run_IBLOG_DIV>div>form>ul {
+	list-style: none;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.run_IBLOG_DIV>div>form>ul>li {
+	margin-bottom: 15px;
+}
+
+.run_IBLOG_DIV>div>form>ul>li>select {
+	width: 200px;
+	margin-right: 30px;
+	height: 30px;
+}
+
+#write_title {
+	width: 100%;
+	height: 30px;
+}
+
+#rev {
+	visibility: hidden;
+}
+
+#upwrite {
+	width: 150px;
+	height: 35px;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #efefef;
+	float: right;
+	margin-right: 2%;
+	margin-top: 2%;
+	color: #0084b7;
+	border: 1px solid black;
+}
+
+#smart_editor2 {
+	width: 1204px;
+}

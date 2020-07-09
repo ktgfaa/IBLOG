@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="smartLayout" template="/WEB-INF/views/common/smarteditor2/smart_layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+	</definition>
+	
+	<definition	name="/smarteditor2/photo_uploader" extends="smartLayout">
+		<put-attribute name="title" value="이미지 업로드"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/smarteditor2/sample/photo_uploader/photo_uploader.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/smarteditor2/file_uploader_html5" extends="smartLayout">
+		<put-attribute name="title" value="이미지 업로드"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/smarteditor2/sample/photo_uploader/file_uploader_html5.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
+
+
+
+
+
+
+
+

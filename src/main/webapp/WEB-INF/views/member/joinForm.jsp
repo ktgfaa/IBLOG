@@ -54,6 +54,7 @@
 			</ul>
 			<div class="addMember_DIV">
 				<form name="IBmember" id="IBmember" method="post">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<table class="memberTable">
 						<tbody>
 							<tr>
@@ -63,7 +64,7 @@
 							</tr>
 							<tr>
 								<td><p>PASSWORD</p></td>
-								<td><input type="password" name="pwd" id="pwd" placeholder="비밀번호 입력칸" /></td>
+								<td><input type="password" name="password" id="pwd" placeholder="비밀번호 입력칸" /></td>
 								<td id="pwdLimit_td"><span id="pwdLimit">비밀번호는 영문+숫자+틀수문자(!@#$%^&+=) 최소 8글자 이상</span></td>
 							</tr>
 							<tr>
@@ -73,7 +74,7 @@
 							</tr>
 							<tr>
 								<td><p>NAME</p></td>
-								<td><input type="text" name="username" id="username" placeholder="이름 입력칸" /></td>
+								<td><input type="text" name="name" id="username" placeholder="이름 입력칸" /></td>
 							</tr>
 							<tr>
 								<td><p>EMAIL</p></td>
@@ -84,8 +85,6 @@
 							</tr>
 						</tbody>
 					</table>
-<!-- 					<input type="hidden" name="enabled" id="enabled" value="1"/>
-					<input type="hidden" name="authority" id="authority" value="ROLE_USER"/> -->
 				</form>
 				<input type="hidden" id="idcheckresult" value="${idcheckresult }" />
 			</div>

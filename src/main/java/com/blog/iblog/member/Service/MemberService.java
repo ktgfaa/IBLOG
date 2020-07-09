@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.blog.iblog.member.dao.MemberDAO;
+import com.blog.iblog.member.vo.AddMemberVO;
 import com.blog.iblog.member.vo.MemberVO;
 
 
@@ -21,7 +22,7 @@ public class MemberService {
 		return memberDAO.loginById(member);
 	}
 	
-	public int addMember(MemberVO memberVO) throws DataAccessException {
+	public int addMember(AddMemberVO memberVO) throws DataAccessException {
 		return memberDAO.insertMember(memberVO);
 	}
 	
@@ -36,4 +37,16 @@ public class MemberService {
 	public int idcheck(String userid) {
 		return memberDAO.idcheck(userid);
 	}
+	
+	public void enabledUpdate(String userid) throws Exception {
+		
+		memberDAO.EnabledUpdate(userid);
+	}
+	
+	public void runblogUpdate(String runblog,String userid) throws Exception {
+		
+		memberDAO.runblogUpdate(runblog,userid);
+	}
+
+
 }

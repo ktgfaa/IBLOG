@@ -3,9 +3,15 @@ package com.blog.iblog.common.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.blog.iblog.member.controller.MemberController;
+
 public class ViewNameInterceptor extends HandlerInterceptorAdapter{
+	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -14,6 +20,9 @@ public class ViewNameInterceptor extends HandlerInterceptorAdapter{
 			System.out.println("인터셉터");
 			String viewName = getViewName(request);
 			request.setAttribute("viewName", viewName);
+	        logger.info("===================       START       ===================");
+	        logger.info(" Request URI \t:  " + request.getRequestURI());
+	        
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

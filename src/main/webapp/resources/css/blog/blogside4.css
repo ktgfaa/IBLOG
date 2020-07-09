@@ -1,0 +1,32 @@
+.side_DIV {
+	background-image: url('/iblog/resources/image/TopImage.png');
+	background-size: cover;
+	font-family: 'Stylish', sans-serif;
+	float: left;
+	width: 100%;
+	min-height: 1260px;
+}
+
+#sidebar-left {
+	width: 25.4%;
+	display: block;
+	float: left;
+	min-height: 100%;
+}
+
+#footer {
+	float: right;
+	width: 100%;
+}
+
+.blogName_DIV {
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 25%;
+}
+
+.blogName_DIV > ul {
+	list-style: none;
+    text-align: center;
+    padding: 0;
+}

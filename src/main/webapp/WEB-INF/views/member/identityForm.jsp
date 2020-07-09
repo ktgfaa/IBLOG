@@ -43,6 +43,7 @@
 							<ul>	
 							<li style="margin-bottom: 80px;"><h2>이메일 본인 인증</h2></li>
 							<li><input type="text" name="email" id="email" placeholder="이메일을 입력해주세요"/>
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							<button type="button" id="sent_email">인증번호받기</button></li>
 							</ul>
 						</form>
@@ -53,6 +54,7 @@
 								<c:if test="${emailMessage eq 'true' }">
 									<li style="margin-bottom: 10px;"><input type="text" name="confirm" id="confirm" placeholder="인증번호를 입력해주세요"/>
 									<button type="button" id="confirm_btn">인증</button></li>
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									<li style="padding-left: 40px;float:left;color:red;"><p>남은시간</p><p id="timeC">3:00</p></li>
 								</c:if>
 								<c:if test="${cer_result eq 'true'}">
@@ -67,6 +69,7 @@
 					<form name="IBpolisy2" id="IBpolisy2" action="${contextPath }/member/cer_conNext.do" method="post">
 						<input type="hidden" name="CerResult" id="CerResult" value="no"/>
 						<input type="button" id="join_next2" disabled="disabled" value="다음" />
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					</form>
 					</div>
 		</div>

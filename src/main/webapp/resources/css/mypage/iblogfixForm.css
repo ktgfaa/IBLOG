@@ -1,0 +1,190 @@
+.sub_cat_main_td > input {
+	background-color: white;
+}
+
+.cat_num_td > input {
+	background-color: white;
+}
+
+.cat_main_td > input {
+	background-color: white;
+}
+
+.run_IBLOG_DIV2 {
+	width: 100%;
+	margin-bottom: 15%;
+	font-size: 22px;
+	font-family: 'Stylish', sans-serif;
+	color: #0084b7;
+}
+
+#fixib {
+	width: 90px;
+	height: 35px;
+	border: none;
+	background-color: pink;
+	margin-top: 50px;
+	margin-right: 90px;
+	float: right;
+	font-family: 'Stylish', sans-serif;
+	cursor: pointer;
+}
+
+.categoryAdd_DIV {
+	width: 100%;
+	min-height: 500px;
+	background-color: white;
+	border: 1px solid;
+	border-color: #969296;
+}
+
+.categoryAdd_DIV>form {
+	width: 100%;
+	border-bottom: 1px solid;
+	border-color: gray;
+	min-height: 300px;
+	background-color: #fdf8d4;
+}
+
+.categoryAdd_DIV>form>table {
+	width: 97%;
+	min-height: 245px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	padding-top: 15px;
+}
+
+.main_category {
+	background-color: white;
+	height: 60px;
+}
+
+.cat_num_td {
+	border: 1px solid;
+	border-right: 1px dashed;
+	border-color: gray;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.cat_main_td {
+	border: 1px solid;
+	border-left: none;
+	border-right: 1px dashed;
+	border-color: gray;
+	padding-left: 10px;
+	margin: 0;
+}
+
+.cat_btn_td {
+	width: 250px;
+	border: 1px solid;
+	border-left: none;
+	border-color: gray;
+	text-align: center;
+	margin: 0;
+}
+
+.cat_num_td>input {
+	width: 20px;
+	height: 30px;
+	text-align: center;
+	border: none;
+}
+
+.cat_main_td>input {
+	width: 700px;
+	height: 30px;
+	border: none;
+}
+
+.cat_btn_td>input {
+	width: 50px;
+	height: 30px;
+	margin-right: 25px;
+}
+
+.sub_cat_num_td {
+	border: none;
+	border-right: 1px solid;
+	border-color: gray;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.sub_cat_num_td>p {
+	margin: 0;
+}
+
+.sub_cat_main_td {
+	border: 1px solid;
+	border-left: none;
+	border-right: 1px dashed;
+	border-color: gray;
+	padding-top: 0;
+	margin: 0;
+	background-color: white;
+}
+
+.sub_cat {
+	width: 650px;
+	height: 30px;
+	border: none;
+	padding-left: 10px;
+	float: left;
+}
+
+.sub_cnum {
+	width: 50px;
+	height: 30px;
+	border: none;
+	border-right: 1px dashed;
+	border-color: gray;
+	text-align: center;
+	float: left;
+}
+
+.sub_cat_btn_td {
+	border: 1px solid;
+	border-left: none;
+	border-color: gray;
+	text-align: center;
+	margin: 0;
+	background-color: white;
+}
+
+.sub_cat_btn_td>input {
+	width: 50px;
+	height: 20px;
+	margin-right: 25px;
+}
+
+.sub_margin_tr {
+	width: 100%;
+	height: 5px;
+}
+
+.main_margin_tr {
+	width: 100%;
+	height: 20px;
+}
+
+.save_div {
+	width: 100%;
+	height: 200px;
+	margin-top: 5%;
+	text-align: center;
+}
+
+.save_div>input {
+	width: 300px;
+	height: 35px;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px solid gray;
+	background-color: bisque;
+	margin-right: 5%;
+	margin-top: 6%;
+}

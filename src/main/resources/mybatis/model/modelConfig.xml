@@ -4,5 +4,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.blog.iblog.member.vo.MemberVO" alias="memberVO"/>
+		<typeAlias type="com.blog.iblog.mypage.vo.IblogInfoVO" alias="iblogInfoVO"/>
+		<typeAlias type="com.blog.iblog.mypage.vo.Iblog_categoryVO" alias="iblog_categoryVO"/>
+		<typeAlias type="com.blog.iblog.mypage.vo.WriteInfoVO" alias="writeInfoVO"/>
 	</typeAliases>
 </configuration>

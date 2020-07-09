@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="memberLayout" template="/WEB-INF/views/common/member/member_layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value="/WEB-INF/views/common/member/header.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+	</definition>
+	
+	<definition	name="/member/loginForm" extends="memberLayout">
+		<put-attribute name="title" value="로그인"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/loginForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/member/idSearchForm" extends="memberLayout">
+		<put-attribute name="title" value="아이디 찾기"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/idSearchForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/member/pwdSearchForm" extends="memberLayout">
+		<put-attribute name="title" value="비밀번호 찾기"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/pwdSearchForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/member/idEnableForm" extends="memberLayout">
+		<put-attribute name="title" value="계정 활성화"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/idEnableForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition	name="/member/TOSForm" extends="memberLayout">
+		<put-attribute name="title" value="이용약관"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/TOSForm.jsp"></put-attribute>
+	</definition>	
+	
+	<definition	name="/member/identityForm" extends="memberLayout">
+		<put-attribute name="title" value="본인인증"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/identityForm.jsp"></put-attribute>
+	</definition>	
+	
+	<definition	name="/member/joinForm" extends="memberLayout">
+		<put-attribute name="title" value="회원가입"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/member/joinForm.jsp"></put-attribute>
+	</definition>	
+	
+</tiles-definitions>

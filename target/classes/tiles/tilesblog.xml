@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="blogLayout"
+		template="/WEB-INF/views/common/blog/blog_layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header" value=""></put-attribute>
+		<put-attribute name="side" value=""></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/blog/footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog1" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header1.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side1.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/skin1.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog1/**/write" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header1.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side1.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/des1.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/updateWriteForm2" extends="blogLayout">
+		<put-attribute name="title" value="아이블로그 글수정"></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header2.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side2.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/updateWriteForm2.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/updateWriteForm3" extends="blogLayout">
+		<put-attribute name="title" value="아이블로그 글수정"></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header3.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side3.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/updateWriteForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/updateWriteForm4" extends="blogLayout">
+		<put-attribute name="title" value="아이블로그 글수정"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side4.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/updateWriteForm4.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/updateWriteForm1" extends="blogLayout">
+		<put-attribute name="title" value="아이블로그 글수정"></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header1.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side1.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/updateWriteForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog2" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header2.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side2.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/skin2.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog2/**/write" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header2.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side2.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/des2.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/**/blog3" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header3.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side3.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/skin3.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog3/**/write" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/blog/header3.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side3.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/des3.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/**/blog4" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side4.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/skin4.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/**/blog4/**/write" extends="blogLayout">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/blog/side4.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/blog/des4.jsp"></put-attribute>
+	</definition>
+
+
+
+</tiles-definitions>

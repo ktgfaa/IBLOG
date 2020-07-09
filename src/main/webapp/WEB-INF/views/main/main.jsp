@@ -9,11 +9,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<c:choose>
+	<c:when test="${memDel eq 'ok' }">
+		<script>
+			window.onload=function() {
+				alert("탈퇴가 완료되었습니다.");
+			}
+		</script>
+	</c:when>
+</c:choose>
+<c:choose>
+	<c:when test="${memDel eq 'no' }">
+		<script>
+			window.onload=function() {
+				alert("회원탈퇴 오류가 발생했습니다. 다시시도 혹은 고객센터로 문의해주세요!!");
+			}
+		</script>
+	</c:when>
+</c:choose>
 <link href="${contextPath }/resources/css/main/main.css?after" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>IBLOG</title>
 <link href="https://fonts.googleapis.com/css2?family=Stylish&amp;display=swap" rel="stylesheet">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script src="<c:url value="/resources/js/main/main.js" />"></script>
 </head>
 <body>
 	<div class="mainForm">	
@@ -130,28 +149,6 @@
 			</div>
 		</div>
 	</div>
-<script type="text/javascript">
-var num = 0;
-	$('#right_BTN').click(function(){
-		if(num != -2560){
-			$('.popular_DIV').css("margin-left",String(num-640)+"px");
-			num += -640;
-			$('#left_BTN').css('visibility','visible');
-		} else {
-			$('#right_BTN').css('visibility','hidden');
-		}
-	})
-	
-	$('#left_BTN').click(function(){
-		console.log(num);
-		if(num != -3200 && num != 0){
-			$('.popular_DIV').css("margin-left",String(num+640)+"px");
-			num += 640;
-			$('#right_BTN').css('visibility','visible');
-		} else if(num == 0) {
-			$('#left_BTN').css('visibility','hidden');
-		}
-	})
-</script>
+</div>
 </body>
 </html>

@@ -27,6 +27,7 @@
 						<div class="total_agree">
 							<input type="checkbox" id="total" name="total" value="1" />
 							<input type="hidden" id="total_val" name="total_val" value="no"/>
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 							<p>Iblog 서비스 이용 약관, 개인정보 수집 및 이용동의에 모두 동의합니다(전체동의)</p>
 					</div>
 					<div class="service_agree">

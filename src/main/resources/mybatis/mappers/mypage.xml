@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.mypage">
+	
+	<insert id="insertnewIblog" parameterType="iblogInfoVO">
+		<![CDATA[
+			insert into ibloginfo(id,blogname,title,blogaddress,subject,skin) values(#{id},#{blogName},#{title},#{blogAddress},#{subject},#{skin})
+		]]>
+	</insert>
+	
+	<select id="selectbyblog" resultType="iblogInfoVO" parameterType="String">
+		<![CDATA[
+			select * from ibloginfo where id = #{id}
+		]]>
+	</select>
+	
+	<select id="selectbyaddress" resultType="iblogInfoVO" parameterType="String">
+		<![CDATA[
+			select * from ibloginfo where blogaddress = #{blogAddress}
+		]]>
+	</select>
+	
+	<update id="updateIblog" parameterType="iblogInfoVO">
+		<![CDATA[
+			update ibloginfo set blogname=#{blogName},title=#{title},subject=#{subject},skin=#{skin} where id=#{id}
+		]]>
+	</update>
+	
+	<insert id="insertaddCategory" parameterType="java.util.Map">
+		<![CDATA[
+			merge into iblog_category 
+			using dual on (id=#{id} and category_num=#{category_num}) 
+			when matched then 
+    		update set category_value=#{category_value} 
+    		when not matched then 
+    		insert (id,category_num,category_value,category_kind) 
+    		values(#{id},#{category_num},#{category_value},#{category_kind})
+		]]>
+	</insert>
+	
+	<select id="selectbyMainCategory" resultType="map" parameterType="String">
+		<![CDATA[
+			select * from iblog_category where id = #{id} and category_kind='main' order by category_num asc
+		]]>
+	</select>
+	
+	<select id="selectbySubCategory" resultType="map" parameterType="String">
+		<![CDATA[
+			select * from iblog_category where id = #{id} and category_kind='sub'
+		]]>
+	</select>
+	
+	<delete id="delCategory" parameterType="java.util.Map">
+		<![CDATA[
+			delete from iblog_category where id=#{id} and category_num=#{category_num}
+		]]>
+	</delete>
+	
+	<select id="selectbySubCategoryNUm" resultType="String" parameterType="java.util.Map">
+		<![CDATA[
+			select category_value from iblog_category where id = #{id} and category_num=#{category_num}
+		]]>
+	</select>
+	
+	<delete id="delWrite" parameterType="java.util.Map">
+		<![CDATA[
+			delete from writeinfo where id=#{id} and write_main_category=#{category_value} or write_sub_category=#{category_value} 
+		]]>
+	</delete>
+	
+	<select id="selectbySubCategory_write" resultType="map" parameterType="java.util.Map">
+		<![CDATA[
+			select * from iblog_category where id=#{id} and category_kind=#{category_kind} and category_num like '%'||#{cat_num}||'-%'
+		]]>
+	</select>
+	
+	<select id="selectbySubCategoryNum_write" resultType="String" parameterType="java.util.Map">
+		<![CDATA[
+			select category_num from iblog_category where id=#{id} and category_value=#{cat_value}
+		]]>
+	</select>
+	
+	<select id="selectbyWriteAdr" resultType="int" parameterType="java.util.Map">
+		<![CDATA[
+			select count(write_address) from writeinfo where id=#{id}
+		]]>
+	</select>
+	
+	<select id="selectbyWriteTitle" resultType="writeInfoVO" parameterType="java.util.Map">
+		<![CDATA[
+			select * from writeinfo where id=#{id}
+		]]>
+	</select>
+	
+	<insert id="insertWrite" parameterType="writeInfoVO">
+		<![CDATA[
+			insert into writeinfo(id,write_main_category,write_sub_category,write_subject,write_description,write_address,write_count) values(#{id},#{write_main_category},#{write_sub_category},#{write_subject},#{write_description},#{write_address},0)
+		]]>
+	</insert>
+	
+	<select id="selectbyWriteLast" resultType="writeInfoVO" parameterType="java.util.Map">
+		<![CDATA[
+			select * from writeinfo where id=#{id} order by write_date desc
+		]]>
+	</select>
+	
+	<update id="updateIblogCount" parameterType="iblogInfoVO">
+		<![CDATA[
+			update ibloginfo set iblog_count=#{iblog_count} where id=#{id}
+		]]>
+	</update>
+	
+	<select id="selectbyWriteAsc" resultType="writeInfoVO" parameterType="java.util.Map">
+		<![CDATA[
+			select * from writeinfo where id=#{id} order by write_date asc
+		]]>
+	</select>
+	
+	<select id="selectbyWriteCount" resultType="int" parameterType="java.util.Map">
+		<![CDATA[
+			select write_count from writeinfo where id=#{id} and write_address=#{write_address}
+		]]>
+	</select>
+	
+	<update id="updateWriteCount" parameterType="java.util.Map">
+		<![CDATA[
+			update writeinfo set write_count=#{write_count} where id=#{id} and write_address=#{write_address}
+		]]>
+	</update>
+	
+	<select id="selectbyblogcount_desc" resultType="iblogInfoVO">
+		<![CDATA[
+			select * from ibloginfo order by iblog_count desc
+		]]>
+	</select>
+	
+	<update id="updateWrite" parameterType="java.util.Map">
+		<![CDATA[
+			update writeinfo set write_subject=#{write_subject},write_description=#{write_description} where id=#{id} and write_address=#{write_address}
+		]]>
+	</update>
+	
+	<delete id="delWriteB" parameterType="writeInfoVO">
+		<![CDATA[
+			delete from writeinfo where id=#{id} and write_main_category=#{write_main_category} and write_sub_category=#{write_sub_category} and write_address=#{write_address} 
+		]]>
+	</delete>
+
+</mapper>

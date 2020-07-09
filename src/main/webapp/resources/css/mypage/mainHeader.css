@@ -1,0 +1,258 @@
+.TopDIV {
+	background-image: url('/iblog/resources/image/TopImage.png');
+	height: 70px;
+	min-width: 100%;
+    margin: 0 auto;
+	background-size: cover;
+}
+
+.logoDiv {
+	height: 68px;
+	border-bottom: 1px solid;
+	border-color: #ea9eef;
+}
+
+#mainLogo {
+	height: 45px;
+	cursor: pointer;
+}
+
+.ListUL {
+	margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 795px;
+    height: 67px;
+}
+
+.ListUL>li {
+	float: left;
+	padding-right: 50px;
+	padding-left: 50px;
+	border-right: 1px solid;
+	border-color: #ea9eef;
+	height: 24px;
+}
+
+.ListUL>li>a {
+	font-size: 22px;
+	text-decoration: none;
+	color: #0084b7;
+	font-family: 'Stylish', sans-serif;
+}
+
+.memberList {
+	height: 67px;
+    width: 264px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.loginA {
+	margin-top: 10px;
+    float : right;
+    margin-right: 30px;
+}
+
+.loginB {
+	margin-top: 28px;
+	margin-left: 12px;
+	margin-right: 10px;
+}
+
+.loginA > img {
+	cursor : pointer;
+}
+
+#memberInfoDIV {
+	float: right;
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+    background: linear-gradient(#ffffff,#aae0ff);
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #ea9eef;
+    visibility: hidden;
+}
+
+#memberInfoDIV > ul {
+	list-style: none;
+    height: 300px;
+    padding: 0;
+    text-align: center;
+    font-family: 'Stylish', sans-serif;
+    font-size: 23px;
+    display: inline-block;
+}
+
+#memberInfoDIV > ul > li > input {
+    width: 200px;
+    height: 25px;
+    border: none;
+    background-color: #c3e9ff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#memberInfoDIV > ul > li > a > button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-top: 3px solid #ea9eef;
+    background-color: #04c3ef59;
+    font-family: 'Stylish', sans-serif;
+    font-size: 17px;
+    padding: 0;
+    cursor : pointer;
+}
+
+
+.loginB > a > button {
+	color: #0084b7;
+	font-size: 16px;
+	border: none;
+	border-radius: 10px 10px 10px 10px;
+	width: 100px;
+	height: 34px;
+	cursor: pointer;
+	font-family: 'Stylish', sans-serif;
+}
+
+#login {
+	background-color: #efcae0;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user {
+	background-color: #ffff00a6;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user:hover {
+	background-color: #ffff0000;
+}
+
+#login:hover {
+	background-color: #ffff0000;
+}
+
+.List {
+	margin-top: 34px;
+}
+
+.total_blog , .search_input_div , .hot_search {
+	width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3%;
+    height: 100px;
+}
+
+.total_blog {
+	height: 80px;
+}
+.search_input_div {
+	margin-top : 5%;
+}
+
+.total_blog > .total_com {
+	font-family: 'Stylish', sans-serif;
+    font-size: 45px;
+    float : left;
+}
+
+.total_blog > .num {
+    color : #fd94a7;
+    margin-left : 3%;
+}
+
+.total_blog > .to {
+    margin-left : 24%;
+}
+
+.total_blog > .com {
+    margin-left : 2%;
+}
+
+.search_input_div > .input_div_span {
+	width: 1000px;
+    float: left;
+}
+
+.input_div_span > span {
+	font-family: 'Stylish', sans-serif;
+    font-size: 17px;
+}
+
+.input_div_img > select {
+	position: absolute;
+    bottom: 0;
+    left:0;
+	width: 165px;
+    height: 56px;
+    font-family: 'Stylish', sans-serif;
+    font-size : 20px;
+}
+
+.input_div_img > input {
+	position: absolute;
+    bottom: 0;
+    left: 20%;
+    margin: 0;
+    width: 750px;
+    height: 50px;
+    font-size : 15px;
+}
+
+
+.hot_search > ul {
+	margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    margin-top: 2%;
+    width: 700px;
+    height: 30px;
+}
+
+.hot_search > ul > li {
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin-right: 7%;
+}
+
+.hot_search > ul > li > button {
+	width: 100px;
+    height: 30px;
+    border: 1px solid #000000;
+    background-color: #9ce0f97a;
+    font-size: 17px;
+    font-family: 'Stylish', sans-serif;
+    cursor : pointer;
+}
+
+.hot_search > span {
+	font-size: 25px;
+	font-family: 'Stylish', sans-serif;
+}
+
+.input_div_img {
+	position: absolute;
+    width: 1000px;
+    height: 80px;
+    margin-top: 1%;
+}
+
+.input_div_img > img {
+	position: absolute;
+	width: 40px;
+    left: 90%;
+    bottom: 8%;
+    cursor:pointer;
+}

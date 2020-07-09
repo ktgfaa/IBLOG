@@ -1,0 +1,138 @@
+#content {
+    box-shadow: -20px 0px 14px -10px #00000073;
+    width: 71%;
+    min-height: 1200px;
+    float: right;
+    display: block;
+    padding: 30px;
+}
+
+.content_DIV {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.blogDis_DIV {
+	width: 100%;
+	height: 100%;
+}
+
+.welcome_DIV {
+	width: 100%;
+	text-align: center;
+	font-family: 'Stylish', sans-serif;
+	height: 264px;
+	border-top: 2px solid; border-bottom : 2px solid;
+	border-color: #717171;
+	background-color: #c2c2c2;
+	opacity: 0.5;
+	margin-bottom: 50px;
+	border-bottom: 2px solid;
+}
+
+.welcome_DIV>h2 {
+	margin-top: 9%;
+	font-size: 40px;
+}
+
+.mainDis_DIV {
+	width: 100%;
+	min-height: 600px;
+	display: inline-block;
+}
+
+.leftCat_DIV {
+	width: 43%;
+	float: left;
+	padding: 40px;
+}
+
+.leftCat_DIV>ul, .rightCat_DIV>ul {
+	list-style: none;
+	border-right: 1px;
+	border-style: outset;
+	padding-top: 20px;
+}
+
+.leftCat_DIV>ul>li, .rightCat_DIV>ul>li {
+	width: 90%;
+	height: 40px;
+}
+
+.leftCat_DIV>ul>li>a, .rightCat_DIV>ul>li>a {
+	margin-left: 10px;
+}
+
+.leftCat_DIV>ul>li>button, .rightCat_DIV>ul>li>button {
+	float: right;
+	margin-top: 5px;
+	border: none;
+	background-color: snow;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+.rightCat_DIV {
+	width: 43%;
+	float: right;
+	padding: 40px;
+}
+
+img {
+	max-width: 1200px;
+}
+
+.categoryTitle_DIV {
+	width: 100%;
+	height: 220px;
+	border-bottom: 2px;
+	border-top: 1px;
+	border-bottom-color: #e1e1e1;
+	border-top-color: #e1e1e1;
+	border-bottom-style: inset;
+	border-top-style: solid;
+}
+
+.categoryTitle_DIV>ul {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	width: 98%;
+	height: 200px;
+}
+
+.categoryTitle_DIV>ul>li>h3 {
+	width: max-content;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	border-radius: 9px 9px 9px 9px;
+}
+
+.discription_DIV {
+	width: 100%;
+	margin-top: 5%;
+}
+
+#wrup {
+	width: 50px;
+	height: 25px;
+	border: none;
+	background-color: black;
+	color: white;
+	border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	margin-right: 30px;
+}
+
+#wrdel {
+	width: 50px;
+	height: 25px;
+	border: none;
+	background-color: black;
+	color: white;
+	border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	margin-right: 30px;
+}

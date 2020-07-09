@@ -17,8 +17,14 @@
 	<p id="quick">Quick Menu</p>
 		<ul id="quick_menu">
 			<li class="hide_BTN"><a href="${contextPath }/main.do"><button>HOME</button></a></li>
-			<li class="hide_BTN"><a href="${contextPath }/member/loginForm.do"><button>로그인</button></a></li>
-			<li class="hide_BTN"><a href="${contextPath }/member/TOSForm.do"><button>회원가입</button></a></li>
+			<c:if test="${member == null}">
+				<li class="hide_BTN"><a href="${contextPath }/member/loginForm.do"><button>로그인</button></a></li>
+				<li class="hide_BTN"><a href="${contextPath }/member/TOSForm.do"><button>회원가입</button></a></li>
+			</c:if>
+			<c:if test="${member != null}">
+				<li class="hide_BTN"><a href="${contextPath }/member/logout.do"><button>로그아웃</button></a></li>
+				<li class="hide_BTN"><a href="${contextPath }/mypage/mypageForm.do"><button>마이페이지</button></a></li>
+			</c:if>
 			<li class="hide_BTN"><a href="#"><button>인기</button></a></li>
 			<li class="hide_BTN"><a href="#"><button>태그</button></a></li>
 			<li class="hide_BTN"><a href="#"><button>공지사항</button></a></li>

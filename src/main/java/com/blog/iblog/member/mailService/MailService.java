@@ -23,7 +23,7 @@ public class MailService {
 		try {
 			MimeMessageHelper messageHelper = 
 					new MimeMessageHelper(message, true, "UTF-8");
-			messageHelper.setFrom("ktgfaa@gmail.com", "DAMOVIE");
+			messageHelper.setFrom("ktgfaa@gmail.com", "IBLOG");
 			messageHelper.setSubject(subject);
 			messageHelper.setTo(to);
 			messageHelper.setText(body, true);
@@ -40,7 +40,7 @@ public class MailService {
 		try {
 			MimeMessageHelper messageHelper = 
 					new MimeMessageHelper(message, true, "UTF-8");
-			messageHelper.setFrom("ktgfaa@gmail.com", "DAMOVIE");
+			messageHelper.setFrom("ktgfaa@gmail.com", "IBLOG");
 			messageHelper.setSubject(subject);
 			messageHelper.setTo(to);
 			messageHelper.setText(body, true);
@@ -67,13 +67,5 @@ public class MailService {
 		}
 		
 	}
-
-	/*
-	 * @Async public void sendPreConfiguredMail(String message) { SimpleMailMessage
-	 * mailMessage = new SimpleMailMessage(preConfiguredMessage);
-	 * mailMessage.setText(message); mailSender.send(mailMessage);
-	 * 
-	 * }
-	 */
 
 }

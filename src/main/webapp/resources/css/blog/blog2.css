@@ -1,0 +1,162 @@
+img {
+	max-width: 800px;
+}
+
+#content {
+	width: 78%;
+	min-height: 900px;
+	padding: 30px;
+	padding-top: 10%;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 18%;
+	padding-bottom: 10%;
+	border-left: 1px solid;
+	border-right: 1px solid;
+	border-color: #e1e1e1;
+	min-height: 900px;
+	display: block;
+}
+
+.categoryTitle_DIV {
+	width: 100%;
+	height: 220px;
+	border-bottom: 2px;
+	border-top: 1px;
+	border-bottom-color: #e1e1e1;
+	border-top-color: #e1e1e1;
+	border-bottom-style: inset;
+	border-top-style: solid;
+}
+
+.categoryTitle_DIV>ul {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	width: 98%;
+	height: 200px;
+}
+
+.categoryTitle_DIV>ul>li>h3 {
+	width: max-content;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	border-radius: 9px 9px 9px 9px;
+}
+
+.discription_DIV {
+	width: 100%;
+	margin-top: 5%;
+	padding-bottom: 10%;
+	border-bottom: 2px inset;
+	border-color: #e1e1e1;
+}
+
+.inner_index {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.article_title {
+	margin-bottom: 5%;
+}
+
+.article_title>span {
+	color: gray;
+}
+
+.article_title>div {
+	margin-bottom: 1%;
+}
+
+.article_title>div>a {
+	text-decoration: none;
+	color: black;
+	font-size: 35px;
+}
+
+.article_dis {
+	margin-bottom: 5%;
+}
+
+.article_dis>p {
+	font-size: 25px;
+	color: #525252;
+}
+
+.button_DIV>button {
+	width: 100%;
+	height: 50px;
+	border-radius: 5px 5px 5px 5px;
+	cursor: pointer;
+}
+
+.article_context2 {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+}
+
+.article_context3 {
+	margin-top: 10%;
+	margin-bottom: 20%;
+}
+
+.article_context3>ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#cat2 {
+	color: gray;
+	width: 84%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.article_context3>ul>li {
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+	margin-bottom: 40px;
+	vertical-align: top;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.article_context3>ul>li>a {
+	text-decoration: none;
+	color: black;
+	font-size: 22px;
+}
+
+.article_context3>ul>li>p {
+	font-size: 18px;
+	width: 67%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+#wrup {
+	width: 50px;
+	height: 25px;
+	border: none;
+	background-color: black;
+	color: white;
+	border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	margin-right: 30px;
+}
+
+#wrdel {
+	width: 50px;
+	height: 25px;
+	border: none;
+	background-color: black;
+	color: white;
+	border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	margin-right: 30px;
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="mypageLayout"
+		template="/WEB-INF/views/common/mypage/mypage_layout.jsp">
+		<put-attribute name="title" value=""></put-attribute>
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/mypage/header.jsp"></put-attribute>
+		<put-attribute name="side"
+			value="/WEB-INF/views/common/mypage/side.jsp"></put-attribute>
+		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/mypage/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/mypage/mypageForm" extends="mypageLayout">
+		<put-attribute name="title" value="마이페이지"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/mypageForm.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/mypage/memberDelForm"
+		extends="mypageLayout">
+		<put-attribute name="title" value="회원탈퇴"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/memberDelForm.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/mypage/myInfoForm" extends="mypageLayout">
+		<put-attribute name="title" value="개인정보"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/myInfoForm.jsp"></put-attribute>
+	</definition>
+
+	<definition name="/mypage/newIblogMakeForm" extends="mypageLayout">
+		<put-attribute name="title" value="새 블로그"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/newIblogMakeForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/mypage/iblogfixForm" extends="mypageLayout">
+		<put-attribute name="title" value="아이블로그 관리"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/iblogfixForm.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/mypage/addWriteForm" extends="mypageLayout">
+		<put-attribute name="title" value="아이블로그 글쓰기"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/mypage/addWriteForm.jsp"></put-attribute>
+	</definition>
+
+
+
+</tiles-definitions>

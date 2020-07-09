@@ -1,0 +1,183 @@
+.TopDIV {
+	height: 300px;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-color: #7171711f;
+	width: 99.9%;
+	margin: 0 auto;
+}
+
+.logoDiv {
+	height: 68px;
+}
+
+#mainLogo {
+	height: 45px;
+	cursor: pointer;
+}
+
+.ListUL {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ListUL>li {
+	padding-right: 50px;
+	padding-left: 15px;
+	height: 24px;
+}
+
+.ListUL>li>a {
+	font-size: 22px;
+	text-decoration: none;
+	color: #0084b7;
+	font-family: 'Stylish', sans-serif;
+}
+
+.memberList {
+	height: 67px;
+	width: 264px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+
+.loginA {
+	padding-top: 20px;
+	float: right;
+	margin-right: 30px;
+}
+
+.loginB {
+	margin-top: 28px;
+	margin-left: 12px;
+	margin-right: 10px;
+}
+
+.loginA>img {
+	cursor: pointer;
+}
+
+#memberInfoDIV {
+	float: right;
+	width: 200px;
+	height: 300px;
+	margin-right: 20px;
+	background: linear-gradient(#ffffff, #aae0ff);
+	border-radius: 10px 10px 10px 10px;
+	border: 3px solid #ea9eef;
+	visibility: hidden;
+}
+
+#memberInfoDIV>ul {
+	list-style: none;
+	height: 300px;
+	padding: 0;
+	text-align: center;
+	font-family: 'Stylish', sans-serif;
+	font-size: 23px;
+	display: inline-block;
+}
+
+#memberInfoDIV>ul>li>input {
+	width: 200px;
+	height: 25px;
+	border: none;
+	background-color: #c3e9ff;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#memberInfoDIV>ul>li>a>button {
+	width: 200px;
+	height: 40px;
+	border: none;
+	border-top: 3px solid #ea9eef;
+	background-color: #04c3ef59;
+	font-family: 'Stylish', sans-serif;
+	font-size: 17px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.loginB>a>button {
+	color: #0084b7;
+	font-size: 16px;
+	border: none;
+	border-radius: 10px 10px 10px 10px;
+	width: 100px;
+	height: 34px;
+	cursor: pointer;
+	font-family: 'Stylish', sans-serif;
+}
+
+#login {
+	background-color: #efcae0;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user {
+	background-color: #ffff00a6;
+	border: 1px solid;
+	border-color: white;
+}
+
+#user:hover {
+	background-color: #ffff0000;
+}
+
+#login:hover {
+	background-color: #ffff0000;
+}
+
+.List {
+	margin-top: 34px;
+}
+
+.blogNameDIV {
+	margin-top: 55px;
+	width: 99.9%;
+	height: 220px;
+	text-align: center;
+}
+
+.blogNameDIV>a {
+	font-family: 'Stylish', sans-serif;
+	font-size: 45px;
+	text-decoration: none;
+	color : black;
+}
+
+.menuLI {
+	margin-top: 90px;
+	margin-left: 70px;
+}
+
+.menuLI>button {
+	padding: 0;
+	background-color: #f0ffff00;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.menuLI>button>img {
+	width: 30px;
+}
+
+.menuLI>button>span {
+	visibility: hidden;
+	font-size: 30px;
+}
+
+#header {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}

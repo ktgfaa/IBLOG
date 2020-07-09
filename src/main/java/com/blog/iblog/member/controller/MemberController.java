@@ -4,37 +4,58 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.blog.iblog.member.Service.MemberService;
+import com.blog.iblog.member.Service.UserDetailsServiceImp;
 import com.blog.iblog.member.dao.MemberDAO;
 import com.blog.iblog.member.mailService.MailService;
+import com.blog.iblog.member.vo.AddMemberVO;
 import com.blog.iblog.member.vo.MemberCerVO;
 import com.blog.iblog.member.vo.MemberPolisyVO;
 import com.blog.iblog.member.vo.MemberVO;
 
 @Controller("memberController")
-public class MemberController extends MultiActionController {
+public class MemberController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
 	private MemberService memberService;
 	
 	@Autowired
+	private UserDetailsServiceImp userDetailsServiceImp;
+	
+	@Autowired
 	private MemberVO memberVO = new MemberVO();
+	
+	@Autowired
+	private UserDetails user = null;
 	
 	@Autowired
 	private MailService mailService;
 	
 	@Autowired
 	private MemberDAO memberDAO;
+
+	
+    private PasswordEncoder passwordEncoder;
+    
+    public void setUp() throws Exception {
+    	 passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
 	
 	private String num = "";
 	
@@ -43,7 +64,6 @@ public class MemberController extends MultiActionController {
 	public ModelAndView loginForm(@RequestParam(value="result", required=false) String result,
 			@RequestParam(value="action", required=false) String action, 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		//String viewName = getViewName(request);
 		String viewName = (String)request.getAttribute("viewName");
 		HttpSession session = request.getSession();
 		session.setAttribute("action", action);
@@ -130,38 +150,58 @@ public class MemberController extends MultiActionController {
 			return mav;
 		}
 	
-	// 로그인
-	@RequestMapping(value="/member/login.do", method=RequestMethod.POST)
-	public ModelAndView login(@ModelAttribute("member") MemberVO member, RedirectAttributes rAttr,
-			HttpServletRequest request, HttpServletResponse response) throws Exception{
+	/*
+	 * // 로그인
+	 * 
+	 * @RequestMapping(value="/member/login.do", method=
+	 * {RequestMethod.GET,RequestMethod.POST}) public ModelAndView
+	 * login(@ModelAttribute("member") MemberVO member, RedirectAttributes rAttr,
+	 * HttpServletRequest request, HttpServletResponse response) throws Exception{
+	 * ModelAndView mav = new ModelAndView();
+	 * System.out.println("-------------login.do 실행---------------");
+	 * logger.info("login.do()"); user =
+	 * userDetailsServiceImp.loadUserByUsername(member.getId()); setUp(); //memberVO
+	 * = userDetailsServiceImp.loadUserByUsername(member.getId()); if(user == null)
+	 * { rAttr.addAttribute("result","loginFailed");
+	 * mav.setViewName("redirect:/member/loginForm.do"); } else {
+	 * 
+	 * boolean pwdMatch = passwordEncoder.matches(member.getPwd(),
+	 * user.getPassword());
+	 * 
+	 * if(user != null && pwdMatch == true && user.isEnabled() == true) {
+	 * HttpSession session = request.getSession(); session.setAttribute("member",
+	 * user); session.setAttribute("isLogon", true); String action =
+	 * (String)session.getAttribute("action"); session.removeAttribute("action");
+	 * if(action !=null) { mav.setViewName("redirect" + action); } else {
+	 * mav.setViewName("redirect:/main.do"); } } else if (user.isEnabled() == false)
+	 * { rAttr.addAttribute("result","Disabled");
+	 * mav.setViewName("redirect:/member/loginForm.do"); } else {
+	 * rAttr.addAttribute("result","loginFailed");
+	 * mav.setViewName("redirect:/member/loginForm.do"); } } return mav; }
+	 */
+	
+	@RequestMapping(value = "/member/logout.do", method = RequestMethod.GET)
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpSession session = request.getSession();
+		session.removeAttribute("member");
+		session.removeAttribute("isLogon");
 		ModelAndView mav = new ModelAndView();
-		memberVO = memberService.login(member);
-		if(memberVO != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("member", memberVO);
-			session.setAttribute("isLogon", true);
-			String action = (String)session.getAttribute("action");
-			session.removeAttribute("action");
-			if(action !=null) {
-				mav.setViewName("redirect" + action);
-			} else {
-				mav.setViewName("redirect:/main.do");
-			}
-		} else {
-			rAttr.addAttribute("result","loginFailed");
-			mav.setViewName("redirect:/member/loginForm.do");
-		}
+		mav.setViewName("redirect:/main.do");
 		return mav;
 	}
 	
 	// 회원가입 하기
 	@RequestMapping(value = "/member/addMember.do", method = RequestMethod.POST)
-	public ModelAndView addMember(@ModelAttribute("member") MemberVO member, HttpServletRequest request,
+	public ModelAndView addMember(@ModelAttribute("member") AddMemberVO member, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-
-		memberService.addMember(member);
-		ModelAndView mav = new ModelAndView("redirect:/member/loginForm.do");
+		int result = memberService.addMember(member);
+		ModelAndView mav = new ModelAndView();
+		if(result == 1) {
+			mav.setViewName("redirect:/member/loginForm.do");
+		} else if (result == 0) {
+			mav.setViewName("redirect:/main.do");
+		} 
 		return mav;
 	}
 	
@@ -239,16 +279,66 @@ public class MemberController extends MultiActionController {
 	@RequestMapping(value= "/member/certification2.do", method=RequestMethod.POST)
 	public ModelAndView certification2(
 			@RequestParam(value="confirm", required=false) String confirm,
+			@RequestParam(value="id", required=false) String id,
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("num : " + num);
 		System.out.println("confirm : " + confirm);
+		System.out.println(" : " + id);
 		if(confirm.equals(num)) {
-			mav.addObject("cer_result", "true");
-			mav.setViewName("redirect:/member/identityForm.do");
+			if(id == null) {
+				mav.addObject("cer_result", "true");
+				mav.setViewName("redirect:/member/identityForm.do");
+			} else {
+				mav.addObject("EnableResult", "succese");
+				mav.addObject("id", id);
+				mav.setViewName("redirect:/member/idEnableForm.do");
+			}
+			
 		} else {
-			mav.setViewName("redirect:/member/TOSForm.do");
+			if(id == null) {
+				mav.setViewName("redirect:/member/TOSForm.do");
+			} else {
+				mav.setViewName("redirect:/member/idEnableForm.do?EnableResult=email_Cer&id="+id);
+			}
 		}
+		
+		return mav;
+	}
+	
+	// 아이디 찾기 폼
+	@RequestMapping(value= "/member/idSearchForm.do", method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView idSearchForm(
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = (String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName(viewName);
+		
+		return mav;
+	}
+	
+	// 비밀번호 찾기 폼
+	@RequestMapping(value= "/member/pwdSearchForm.do", method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView pwdSearchForm(
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = (String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName(viewName);
+		
+		return mav;
+	}
+	
+	// 계정 활성화 폼
+	@RequestMapping(value= "/member/idEnableForm.do", method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView idEnableForm(
+			@RequestParam(value="EnableResult", required=false) String EnableResult,
+			@RequestParam(value="id", required=false) String id,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String viewName = (String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName(viewName);
+		mav.addObject("EnableResult", EnableResult);
+		mav.addObject("id", id);
 		
 		return mav;
 	}
@@ -271,11 +361,11 @@ public class MemberController extends MultiActionController {
 		sb.append("<html><head>");
 		sb.append("<meta http-equiv='content-Type' content='text/html;charset=euc-kr'>");
 		sb.append("</head><body>");
-		sb.append("<img src='http://192.168.0.2:8080/damovie/resources/images/damovilogo2.png'/><br>");
-		sb.append("<h1>안녕하세요!! DAMOVIE 입니다</h1><br>");
+		sb.append("<img src='http://192.168.123.11:8080/iblog/resources/image/logo/Mainlogo4.png'/><br>");
+		sb.append("<h1>안녕하세요!! IBLOG 입니다</h1><br>");
 		sb.append("<h2>귀하의 id는</h2>" + "<h1 style='color:red;'>" + userid + "</h1>" + " <h2>입니다.</h2><br>");
 		sb.append("<strong>보안상 받으신 메일은 삭제를 권장드립니다!!!</strong><br>");
-		sb.append("<a href='http://192.168.0.2:8080/damovie/member/loginForm.do'>로그인 하러가기</h1>");
+		sb.append("<a href='http://192.168.123.11:8080/iblog/member/loginForm.do'>로그인 하러가기</h1>");
 		sb.append("</body></html>");
 		String str = sb.toString();
 	mailService.sendMail(useremail, "아이디 찾기", str);
@@ -313,11 +403,11 @@ public class MemberController extends MultiActionController {
 		sb.append("<html><head>");
 		sb.append("<meta http-equiv='content-Type' content='text/html;charset=euc-kr'>");
 		sb.append("</head><body>");
-		sb.append("<img src='http://192.168.0.2:8080/damovie/resources/images/damovilogo2.png'/><br>");
-		sb.append("<h1>안녕하세요!! DAMOVIE 입니다</h1><br>");
+		sb.append("<img src='http://192.168.123.11:8080/iblog/resources/image/logo/Mainlogo4.png'/><br>");
+		sb.append("<h1>안녕하세요!! IBLOG 입니다</h1><br>");
 		sb.append("<h2>귀하의 임의 비밀번호는</h2>" + "<h1 style='color:red;'>" + userpwd + "</h1>" + " <h2>입니다.</h2><br>");
-		sb.append("<strong>보안상 받으신 메일은 삭제를 해주세요!!!</strong><br>");
-		sb.append("<a href='http://192.168.0.2:8080/damovie/member/loginForm.do'>로그인 하러가기</h1>");
+		sb.append("<strong>변경된 임시 비밀번호로 로그인 한 후 변경 해주세요!!</strong><br>");
+		sb.append("<a href='http://192.168.123.11:8080/iblog/member/loginForm.do'>로그인 하러가기</h1>");
 		sb.append("</body></html>");
 		String str = sb.toString();
 		mailService.pwdsendMail(useremail, "비밀번호 찾기", str);
@@ -380,6 +470,79 @@ public class MemberController extends MultiActionController {
 		
 		mav.addObject("emailMessage", emailmessage);
 		mav.setViewName("redirect:/member/identityForm.do");
+		return mav;
+	}
+	
+	// 계정 활성화 인증받기
+	@RequestMapping(value = "/member/idEnabled_check.do", method = {RequestMethod.POST , RequestMethod.GET})
+	public ModelAndView idEnabled_check(
+			@ModelAttribute("idEnabled_check") MemberVO member,
+			RedirectAttributes rAttr,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		HttpSession session = request.getSession();
+		session.removeAttribute("EnableResult");
+		ModelAndView mav = new ModelAndView();
+
+		memberVO = (MemberVO) userDetailsServiceImp.loadUserByUsername(member.getId());
+		
+		if(memberVO == null) {
+			rAttr.addAttribute("EnableResult","idfailed");
+			mav.setViewName("redirect:/member/idEnableForm.do");
+		}else {
+			setUp();
+			boolean pwdMatch = passwordEncoder.matches(member.getPwd(), memberVO.getPassword());
+			
+			if(memberVO != null && pwdMatch == true) {
+				if (memberVO.isEnabled() == true) {
+						rAttr.addAttribute("EnableResult","enfailed");
+						mav.setViewName("redirect:/member/idEnableForm.do");
+					} else {
+						for(int i = 0; i < 10; i++) {
+					
+						    double dValue = Math.random();
+				
+						    int iValue = (int)(dValue * 10);
+				
+						    num += Integer.toString(iValue);
+							}
+						    String userEmail = memberDAO.emailsearch(memberVO.getUsername());
+						    System.out.println(userEmail);
+							StringBuffer sb = new StringBuffer();
+							sb.append("<html><head>");
+							sb.append("<meta http-equiv='content-Type' content='text/html;charset=euc-kr'>");
+							sb.append("</head><body>");
+							sb.append("<img src='http://192.168.123.11:8080/iblog/resources/image/logo/Mainlogo4.png'/><br>");
+							sb.append("<h1>안녕하세요!! IBLOG 입니다</h1><br>");
+							sb.append("<h2>인증번호</h2>" + "<h1 style='color:red;'>" + num + "</h1>" + " <h2>입니다.</h2><br>");
+							sb.append("</body></html>");
+							String str = sb.toString();
+							mailService.certificationMail(userEmail, "메일 인증", str);
+							rAttr.addAttribute("EnableResult","email_Cer");
+							rAttr.addAttribute("id",memberVO.getUsername());
+							mav.setViewName("redirect:/member/idEnableForm.do");
+						}
+			} else {
+				rAttr.addAttribute("EnableResult","pwdfailed");
+				mav.setViewName("redirect:/member/idEnableForm.do");
+			}
+		}
+		return mav;
+	}
+	
+	// 계정 활성화 풀기
+	@RequestMapping(value = "/member/idEnabled.do", method = RequestMethod.POST)
+	public ModelAndView idEnabled(
+			@ModelAttribute("idEnabled") MemberVO member,
+			HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
+		memberService.enabledUpdate(member.getUsername());
+		
+		ModelAndView mav = new ModelAndView("redirect:/member/loginForm.do");
 		return mav;
 	}
 	

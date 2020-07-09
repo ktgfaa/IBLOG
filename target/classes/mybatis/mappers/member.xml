@@ -5,60 +5,91 @@
 <mapper namespace="mapper.member">
 
 	<select id="idsearch" parameterType="String" resultType="String">
+		<![CDATA[
 		SELECT
 		id FROM iblog_member
 		WHERE
-		email = #{email}
+		email = #{useremail}
+		]]>
 	</select>
 	
 	<update id="updatePwd" parameterType="java.util.Map">
 		<![CDATA[
-			update iblog_member set pwd=#{pwd} where id=#{userid}
+			update iblog_member set password=#{pwd} where id=#{userid}
+		]]>
+	</update>
+	
+	<update id="updateEnabled" parameterType="String">
+		<![CDATA[
+			update iblog_member set enabled='1' where id=#{userid}
 		]]>
 	</update>
 
 	<select id="selectPwd" resultType="String">
 		<![CDATA[
-			select pwd from iblog_member where id=#{id}
+			select password from iblog_member where id=#{id}
+		]]>
+	</select>
+	
+	<select id="selectEmail" resultType="String" parameterType="String">
+		<![CDATA[
+			select email from iblog_member where id=#{id}
 		]]>
 	</select>
 
 	<insert id="insertMember" parameterType="memberVO">
 		<![CDATA[
-			insert into iblog_member(id,pwd,username,email) values(#{id},#{pwd},#{username},#{email})
+			insert into iblog_member(id,password,name,email) values(#{id},#{password},#{name},#{email})
 		]]>
 	</insert>
 
-	<update id="updateMember" parameterType="memberVO">
+	<update id="updateMember" parameterType="java.util.Map">
 		<![CDATA[
-			update iblog_member set pwd=#{pwd}, username=#{username}, email=#{email} where id=#{id}
+			update iblog_member set name=#{name} where id=#{id}
+		]]>
+	</update>
+	
+	<update id="updateRunblog" parameterType="java.util.Map">
+		<![CDATA[
+			update iblog_member set runblog=#{runblog} where id=#{id}
 		]]>
 	</update>
 
 	<delete id="deleteMember" parameterType="String">
 		<![CDATA[
-			delete from t_member where id=#{id}
+			delete from iblog_member where id=#{id}
 		]]>
 	</delete>
 	
 	<select id="loginById" resultType="memberVO" parameterType="memberVO">
 		<![CDATA[
-			select * from iblog_member where id = #{id} and pwd = #{pwd}
+			select * from iblog_member where id = #{id}
 		]]>
 	</select>
 	
+	<select id="selectUserById" resultType="memberVO" parameterType="java.util.Map">
+		<![CDATA[
+			select * from iblog_member where id = #{id}
+		]]>
+	</select>
+	
+	
 	<select id="idcheck" parameterType="String" resultType="Integer">
+	<![CDATA[
 		SELECT
 		COUNT(*) FROM iblog_member
 		WHERE
 		id = #{id}
+		]]>
 	</select>
 	
 	<select id="emailcheck" parameterType="String" resultType="Integer">
+	<![CDATA[
 		SELECT
 		COUNT(*) FROM iblog_member
 		WHERE
 		email = #{email}
+		]]>
 	</select>
 
 </mapper>

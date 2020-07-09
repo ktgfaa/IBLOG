@@ -1,0 +1,60 @@
+
+.mypage_ListDIV {
+	width: 15%;
+	height: 100%;
+	margin-left: 10%;
+	position : absolute;
+}
+
+.mypage_ListDIV>div>ul>li>a {
+	text-decoration: none;
+	color: #40caff;
+}
+
+.member_DIV {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	border: 2px solid;
+	border-color: #969296;
+	padding: 20px;
+	background-color: white;
+}
+
+.member_DIV>ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+	font-family: 'Stylish', sans-serif;
+	color: #0084b7;
+	text-align: center;
+}
+
+.member_DIV>ul>li>img {
+	width: 100px;
+}
+
+.member_DIV2 {
+	border: 2px solid;
+	border-color: #969296;
+	padding: 20px;
+	background-color: white;
+}
+
+.member_DIV2>ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 20px;
+	font-family: 'Stylish', sans-serif;
+	color: #0084b7;
+	border-bottom: 1px solid;
+	border-color: #969296;
+	padding-bottom: 30px;
+}
+
+.member_DIV2>ul>li {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
