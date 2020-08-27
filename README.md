@@ -7,16 +7,20 @@
 
 
 
-### 블로그 만들기![image](https://user-images.githubusercontent.com/57380730/91409674-b0ecfa80-e880-11ea-9002-249d7e5506d4.png)
+#### 블로그 만들기
+![image](https://user-images.githubusercontent.com/57380730/91409674-b0ecfa80-e880-11ea-9002-249d7e5506d4.png)
 
 
-### 카테고리 만들기![image](https://user-images.githubusercontent.com/57380730/91409681-b64a4500-e880-11ea-86bd-9e534b0b81b0.png)
+#### 카테고리 만들기
+![image](https://user-images.githubusercontent.com/57380730/91409681-b64a4500-e880-11ea-86bd-9e534b0b81b0.png)
 
 
-### 글쓰기![image](https://user-images.githubusercontent.com/57380730/91409688-b9453580-e880-11ea-9902-fd8b55d4a3fc.png)
+#### 글쓰기
+![image](https://user-images.githubusercontent.com/57380730/91409688-b9453580-e880-11ea-9902-fd8b55d4a3fc.png)
 
 
-### 완성된 블로그 메인페이지![image](https://user-images.githubusercontent.com/57380730/91409696-bc402600-e880-11ea-82e1-de30a71a5f7e.png)
+#### 완성된 블로그 메인페이지
+![image](https://user-images.githubusercontent.com/57380730/91409696-bc402600-e880-11ea-82e1-de30a71a5f7e.png)
 
 
 
