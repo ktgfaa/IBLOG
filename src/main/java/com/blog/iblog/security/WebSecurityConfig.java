@@ -21,16 +21,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final Logger logger = LoggerFactory.getLogger(WebSecurityConfig.class);
 
 	@Bean
-	public UserDetailsService userDetailsService() {
-		return new UserDetailsServiceImp();
-	}
-
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-
-	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		logger.info("authenticationProvider()");
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -46,6 +36,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().sameOrigin();
 		http.headers().disable();
 		logger.info("configure()");
+	}
+
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new UserDetailsServiceImp();
 	}
 
 }

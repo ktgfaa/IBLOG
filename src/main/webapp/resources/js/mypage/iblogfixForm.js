@@ -39,11 +39,11 @@ $(window).on('load', function() {
 			} catch(e) {
 				return false;
 			}
-		})
+		});
 		
 		$("#main_add").click(function(){
 			const num = $('.main_category').length + 1;
-			console.log(num);
+			
 			if(num == 17) {
 				alert("최대 16개 까지 만들 수 있습니다.")
 			} else {
@@ -57,13 +57,13 @@ $(window).on('load', function() {
 			}
 					
 		
-		})
+		});
 		
 		
 		$("#catego_save").click(function(){
 
 				 document.ADDCAT.submit();
 
-		})
+		});
 
-})
+});

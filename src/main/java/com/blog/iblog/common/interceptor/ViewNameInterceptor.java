@@ -13,22 +13,6 @@ public class ViewNameInterceptor extends HandlerInterceptorAdapter{
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
-		try {
-			System.out.println("인터셉터");
-			String viewName = getViewName(request);
-			request.setAttribute("viewName", viewName);
-	        logger.info("===================       START       ===================");
-	        logger.info(" Request URI \t:  " + request.getRequestURI());
-	        
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return true;
-	}
-	
 	private String getViewName(HttpServletRequest request)  throws Exception{
 		String contextPath = request.getContextPath();
 		String uri = (String)request.getAttribute("javax.servlet.include.request_uri");
@@ -61,5 +45,21 @@ public class ViewNameInterceptor extends HandlerInterceptorAdapter{
 		
 		//fileName = fileName.replace("/", "");
 		return viewName;
+	}
+	
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		try {
+			System.out.println("인터셉터");
+			String viewName = getViewName(request);
+			request.setAttribute("viewName", viewName);
+	        logger.info("===================       START       ===================");
+	        logger.info(" Request URI \t:  " + request.getRequestURI());
+	        
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 }

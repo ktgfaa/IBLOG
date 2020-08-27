@@ -61,6 +61,6 @@ $(window).on('load', function() {
 		})
 		
 		$("#delBLOG").click(function(){
-			location.href="${contextPath}/member/idEnableForm.do";
+			location.href="/iblog/member/idEnableForm.do";
 		})
 })

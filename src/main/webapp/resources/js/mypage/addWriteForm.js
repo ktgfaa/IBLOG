@@ -8,17 +8,17 @@ $(window).on('load', function() {
 		htParams : {
 			bUseToolbar : true,
 			bUseVerticalResizer : true,
-			bUseModeChanger: true
+			bUseModeChanger : true
 		}
 	});
 
 	$("#saveWrite").click(function() {
-		console.log("save");
-		try {
 
+		try {
+			// 스마트 에디터에서 글쓴내용을 submit 하기전 텍스트박스에 업데이트
 			oEditors.getById["bo_content"].exec("UPDATE_CONTENTS_FIELD", []);
-			console.log($('#main option:selected').val());
-			console.log($('#sub option:selected').val());
+
+			// 메인주제,서브주제 선택했는지 확인
 			if ($('#main option:selected').val() == '메인카테고리') {
 				alert("메인 주제를 선택하지 않았습니다.");
 				return false;

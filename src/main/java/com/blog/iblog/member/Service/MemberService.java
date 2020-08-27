@@ -18,29 +18,29 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-	public MemberVO login(MemberVO member) {
-		return memberDAO.loginById(member);
-	}
-	
 	public int addMember(AddMemberVO memberVO) throws DataAccessException {
 		return memberDAO.insertMember(memberVO);
-	}
-	
-	public String idsearch(String useremail) {
-		return memberDAO.idsearch(useremail);
-	}
-
-	public String pwdsearch(String useremail, String userid) {
-		return memberDAO.pwdsearch(useremail, userid);
-	}
-	
-	public int idcheck(String userid) {
-		return memberDAO.idcheck(userid);
 	}
 	
 	public void enabledUpdate(String userid) throws Exception {
 		
 		memberDAO.EnabledUpdate(userid);
+	}
+	
+	public int idcheck(String userid) {
+		return memberDAO.idcheck(userid);
+	}
+
+	public String idsearch(String useremail) {
+		return memberDAO.idsearch(useremail);
+	}
+	
+	public MemberVO login(MemberVO member) {
+		return memberDAO.loginById(member);
+	}
+	
+	public String pwdsearch(String useremail, String userid) {
+		return memberDAO.pwdsearch(useremail, userid);
 	}
 	
 	public void runblogUpdate(String runblog,String userid) throws Exception {

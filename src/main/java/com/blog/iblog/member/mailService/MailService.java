@@ -18,7 +18,7 @@ public class MailService {
 	 
 	
 	@Async
-	public void sendMail(String to, String subject, String body) {
+	public void certificationMail(String to, String subject, String body) {
 		MimeMessage message = mailSender.createMimeMessage();
 		try {
 			MimeMessageHelper messageHelper = 
@@ -52,7 +52,7 @@ public class MailService {
 	}
 	
 	@Async
-	public void certificationMail(String to, String subject, String body) {
+	public void sendMail(String to, String subject, String body) {
 		MimeMessage message = mailSender.createMimeMessage();
 		try {
 			MimeMessageHelper messageHelper = 

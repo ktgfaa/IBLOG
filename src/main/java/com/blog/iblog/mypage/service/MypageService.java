@@ -17,6 +17,30 @@ public class MypageService {
 	@Autowired
 	MypageDAO mypageDAO;
 
+	public void addCategory(Iblog_categoryVO iblog_categoryVO) throws Exception {
+
+		mypageDAO.addCategory(iblog_categoryVO);
+	}
+	
+	public void addWrite(WriteInfoVO writeInfoVO) throws Exception {
+
+		mypageDAO.addWrite(writeInfoVO);
+	}
+	
+	public void delCategory(Iblog_categoryVO iblog_categoryVO) throws Exception {
+		mypageDAO.delCategory(iblog_categoryVO);
+		
+	}
+
+	public void deleteWrite(WriteInfoVO writeInfoVO) {
+		mypageDAO.deleteWrite(writeInfoVO);
+	}
+	
+	public void delWrite(String iblog_categoryVO,String id) throws Exception {
+		mypageDAO.delWrite(iblog_categoryVO,id);
+		
+	}
+	
 	public int newIblog(IblogInfoVO iblogInfoVO) throws Exception {
 
 		return mypageDAO.newIblog(iblogInfoVO);
@@ -26,33 +50,9 @@ public class MypageService {
 		
 		mypageDAO.updateIblog(iblogInfoVO);
 	}
-	
-	public void addCategory(Iblog_categoryVO iblog_categoryVO) throws Exception {
 
-		mypageDAO.addCategory(iblog_categoryVO);
-	}
-
-	public void delCategory(Iblog_categoryVO iblog_categoryVO) throws Exception {
-		mypageDAO.delCategory(iblog_categoryVO);
-		
-	}
-	
-	public void delWrite(String iblog_categoryVO,String id) throws Exception {
-		mypageDAO.delWrite(iblog_categoryVO,id);
-		
-	}
-	
-	public void addWrite(WriteInfoVO writeInfoVO) throws Exception {
-
-		mypageDAO.addWrite(writeInfoVO);
-	}
-	
 	public void updateWrite(WriteInfoVO writeInfoVO) throws Exception {
 		
 		mypageDAO.updateWrite(writeInfoVO);
-	}
-
-	public void deleteWrite(WriteInfoVO writeInfoVO) {
-		mypageDAO.deleteWrite(writeInfoVO);
 	}
 }

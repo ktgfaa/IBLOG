@@ -16,17 +16,13 @@ import com.blog.iblog.member.dao.MemberDAO;
 import com.blog.iblog.member.vo.MemberVO;
 
 public class UserDetailsServiceImp implements UserDetailsService {
+    private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImp.class);
     @Autowired
     private MemberDAO memberDAO;
-    private PasswordEncoder passwordEncoder;
     
-    private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImp.class);
+    private PasswordEncoder passwordEncoder;
  
-    public void setUp() throws Exception {
-    	 passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
-
-	@Override
+    @Override
     public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
 		System.out.println("----------------- userDetail 실행 --------------");
 		logger.info("loadUserByUsername()");
@@ -41,6 +37,10 @@ public class UserDetailsServiceImp implements UserDetailsService {
             throw new UsernameNotFoundException(id);
         }
         return new org.springframework.security.core.userdetails.User(memberVO.getUsername(),passwordEncoder.encode(memberVO.getPassword()),memberVO.getAuthorities());
+    }
+
+	public void setUp() throws Exception {
+    	 passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 	 
 

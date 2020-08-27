@@ -26,10 +26,10 @@ public class Smarteditor2Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Smarteditor2Controller.class);
 	
 	// 파일 업로드 폼 
-	@RequestMapping(value= "/smarteditor2/photo_uploader.do", method= {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView photo_uploader(
+	@RequestMapping(value= "/smarteditor2/file_uploader_html5.do", method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView file_uploader_html5(
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		logger.info("photo_uploader 실행");
+		logger.info("file_uploader_html5 실행");
 		String viewName = (String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName(viewName);
@@ -37,10 +37,10 @@ public class Smarteditor2Controller {
 	}
 	
 	// 파일 업로드 폼 
-	@RequestMapping(value= "/smarteditor2/file_uploader_html5.do", method= {RequestMethod.GET,RequestMethod.POST})
-	public ModelAndView file_uploader_html5(
+	@RequestMapping(value= "/smarteditor2/photo_uploader.do", method= {RequestMethod.GET,RequestMethod.POST})
+	public ModelAndView photo_uploader(
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		logger.info("file_uploader_html5 실행");
+		logger.info("photo_uploader 실행");
 		String viewName = (String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName(viewName);

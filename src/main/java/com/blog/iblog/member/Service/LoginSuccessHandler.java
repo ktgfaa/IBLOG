@@ -28,18 +28,32 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginSuccessHandler.class);
 	
-	private RequestCache requestCache = new HttpSessionRequestCache();
-	private RedirectStrategy redirectStratgy = new DefaultRedirectStrategy();
-	
-	private String loginidname;
 	private String defaultUrl;
+	private String loginidname;
 	
 	@Autowired
 	private MemberDAO memberDAO;
-	
 	@Autowired
 	private MypageDAO mypageDAO;
+	
+	private RedirectStrategy redirectStratgy = new DefaultRedirectStrategy();
+	
+	private RequestCache requestCache = new HttpSessionRequestCache();
 
+	protected void clearAuthenticationAttributes(HttpServletRequest request) {
+		HttpSession session = request.getSession(false);
+		if(session==null) return;
+		session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
+	}
+	
+	public String getDefaultUrl() {
+		return defaultUrl;
+	}
+	
+	public String getLoginidname() {
+		return loginidname;
+	}
+	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
@@ -65,12 +79,6 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		
 	}
 	
-	protected void clearAuthenticationAttributes(HttpServletRequest request) {
-		HttpSession session = request.getSession(false);
-		if(session==null) return;
-		session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-	}
-	
 	protected void resultRedirectStrategy(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		
@@ -85,31 +93,23 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		}
 		
 	}
-	
-	protected void useSessionUrl(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		SavedRequest savedRequest = requestCache.getRequest(request, response);
-		String targetUrl = savedRequest.getRedirectUrl();
-		redirectStratgy.sendRedirect(request, response, targetUrl);
-	}
-	
-	protected void useDefaultUrl(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		redirectStratgy.sendRedirect(request, response, "/main.do");
-	}
 
-	public String getLoginidname() {
-		return loginidname;
+	public void setDefaultUrl(String defaultUrl) {
+		this.defaultUrl = defaultUrl;
 	}
 
 	public void setLoginidname(String loginidname) {
 		this.loginidname = loginidname;
 	}
 
-	public String getDefaultUrl() {
-		return defaultUrl;
+	protected void useDefaultUrl(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		redirectStratgy.sendRedirect(request, response, "/main.do");
 	}
 
-	public void setDefaultUrl(String defaultUrl) {
-		this.defaultUrl = defaultUrl;
+	protected void useSessionUrl(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		SavedRequest savedRequest = requestCache.getRequest(request, response);
+		String targetUrl = savedRequest.getRedirectUrl();
+		redirectStratgy.sendRedirect(request, response, targetUrl);
 	}
 
 }

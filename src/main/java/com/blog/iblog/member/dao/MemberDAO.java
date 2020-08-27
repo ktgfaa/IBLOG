@@ -20,20 +20,28 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	@Bean
-	BCryptPasswordEncoder passwordEncoder() {
-
-	    return new BCryptPasswordEncoder();
+	public int deleteMember(String id) throws DataAccessException {
+		int result = sqlSession.delete("mapper.member.deleteMember", id);
+		return result;
 	}
 	
-	public void setSqlSession(SqlSession sqlsession) {
-		this.sqlSession = sqlsession;
+	public int emailcheck(String useremail) throws DataAccessException {
+		int count = 0;
+		count = sqlSession.selectOne("mapper.member.emailcheck", useremail);
+		return count;
 	}
 	
-	public MemberVO loginById(MemberVO member) throws DataAccessException {
-		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",member);
-		return vo;
+	public String emailsearch(String id) throws DataAccessException {
+		String email = null;
+		email = sqlSession.selectOne("mapper.member.selectEmail", id);
+		return email;
 	}
+	
+	public void EnabledUpdate(String userid) throws Exception {
+		
+		sqlSession.update("mapper.member.updateEnabled",userid);
+	}
+	
 	
 	public MemberVO getuserID(String id) {
 		Map<String,String> map = new HashMap<String,String>();
@@ -42,10 +50,10 @@ public class MemberDAO {
 		return vo;
 	}
 	
-	
-	public int insertMember(AddMemberVO memberVO) throws DataAccessException {
-		int result = sqlSession.insert("mapper.member.insertMember", memberVO);
-		return result;
+	public int idcheck(String userid) throws DataAccessException {
+		int count = 0;
+		count = sqlSession.selectOne("mapper.member.idcheck", userid);
+		return count;
 	}
 	
 	public String idsearch(String useremail) throws DataAccessException {
@@ -54,18 +62,43 @@ public class MemberDAO {
 		return id;
 	}
 	
+	public int insertMember(AddMemberVO memberVO) throws DataAccessException {
+		int result = sqlSession.insert("mapper.member.insertMember", memberVO);
+		return result;
+	}
+
+	public MemberVO loginById(MemberVO member) throws DataAccessException {
+		MemberVO vo = sqlSession.selectOne("mapper.member.loginById",member);
+		return vo;
+	}
+	
+	public void meminfoUpdate(MemberVO member) throws Exception {
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("id", member.getUsername());
+		map.put("name", member.getName());
+		sqlSession.update("mapper.member.updateMember", map);
+	}
+	
+	@Bean
+	BCryptPasswordEncoder passwordEncoder() {
+
+	    return new BCryptPasswordEncoder();
+	}
+	
+	public void passwordUpdate(String userid,String pwd) throws Exception {
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("pwd", pwd);
+		map.put("userid", userid);
+		
+		sqlSession.update("mapper.member.updatePwd", map);
+	}
+	
 	public String pwdsearch(String id) throws DataAccessException {
 		String pwd = null;
 		pwd = sqlSession.selectOne("mapper.member.selectPwd", id);
 		return pwd;
 	}
 	
-	public String emailsearch(String id) throws DataAccessException {
-		String email = null;
-		email = sqlSession.selectOne("mapper.member.selectEmail", id);
-		return email;
-	}
-
 	public String pwdsearch(String useremail, String userid) throws DataAccessException {
 		String pwd = "";
 
@@ -84,48 +117,15 @@ public class MemberDAO {
 		return pwd;
 	}
 	
-	public int idcheck(String userid) throws DataAccessException {
-		int count = 0;
-		count = sqlSession.selectOne("mapper.member.idcheck", userid);
-		return count;
-	}
-	
-	public int emailcheck(String useremail) throws DataAccessException {
-		int count = 0;
-		count = sqlSession.selectOne("mapper.member.emailcheck", useremail);
-		return count;
-	}
-	
-	public void EnabledUpdate(String userid) throws Exception {
-		
-		sqlSession.update("mapper.member.updateEnabled",userid);
-	}
-	
-	public void passwordUpdate(String userid,String pwd) throws Exception {
-		Map<String,String> map = new HashMap<String,String>();
-		map.put("pwd", pwd);
-		map.put("userid", userid);
-		
-		sqlSession.update("mapper.member.updatePwd", map);
-	}
-	
-	public int deleteMember(String id) throws DataAccessException {
-		int result = sqlSession.delete("mapper.member.deleteMember", id);
-		return result;
-	}
-	
-	public void meminfoUpdate(MemberVO member) throws Exception {
-		Map<String,String> map = new HashMap<String,String>();
-		map.put("id", member.getUsername());
-		map.put("name", member.getName());
-		sqlSession.update("mapper.member.updateMember", map);
-	}
-
 	public void runblogUpdate(String runblog, String userid) {
 		Map<String,String> map = new HashMap<String,String>();
 		map.put("runblog", runblog);
 		map.put("id", userid);
 		sqlSession.update("mapper.member.updateRunblog", map);
 		
+	}
+
+	public void setSqlSession(SqlSession sqlsession) {
+		this.sqlSession = sqlsession;
 	}
 }

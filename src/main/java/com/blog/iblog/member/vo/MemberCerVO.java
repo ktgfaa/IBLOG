@@ -4,43 +4,43 @@ import org.springframework.stereotype.Component;
 
 @Component("memberCerVO")
 public class MemberCerVO {
+	private String CerResult;
+	private String email;
 	private String id;
 	private String pwd;
-	private String email;
 	private String userEmail;
-	private String CerResult;
 	
 	
 	
-	public String getUserEmail() {
-		return userEmail;
-	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
 	public String getCerResult() {
 		return CerResult;
-	}
-	public void setCerResult(String cerResult) {
-		CerResult = cerResult;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPwd() {
-		return pwd;
-	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
 	}
 	public String getEmail() {
 		return email;
 	}
+	public String getId() {
+		return id;
+	}
+	public String getPwd() {
+		return pwd;
+	}
+	public String getUserEmail() {
+		return userEmail;
+	}
+	public void setCerResult(String cerResult) {
+		CerResult = cerResult;
+	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 	
 	
