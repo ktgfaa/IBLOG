@@ -23,18 +23,10 @@
 	<div class="TopDIV">
 		<div class="logoDiv">
 			<ul class="ListUL">
-				<li class="List"
-					style="border-left: 1px solid; border-color: #ea9eef;"><a
-					href="#">공지</a></li>
-				<li class="List"><a href="#">태그</a></li>
-				<li style="margin-top: 21px; border: none;"><a
+				<li style="padding-top: 14px; border: none;"><a
 					href="${contextPath }/main.do"> <img title="HOME" id="mainLogo"
 						src="/iblog/resources/image/logo/Mainlogo4.png" />
 				</a></li>
-				<li class="List"
-					style="border-left: 1px solid; border-color: #ea9eef;"><a
-					href="#">인기</a></li>
-				<li class="List"><a href="#">검색</a></li>
 			</ul>
 			<ul class="memberList">
 			<c:if test="${member.getRunblog() eq 'run' }">
@@ -75,25 +67,8 @@
 			</div>
 			<div class="search_input_div">
 				<div class="input_div_span">
-					<span>검색 필터를 통해 원하는 블로그를 찾아보세요!!</span>
+					<span>회원가입을 통해 개인 블로그를 개설해 보세요!!</span>
 				</div>
-				<div class="input_div_img">
-						<select>
-							<option>전체</option>
-						</select>
-						<input type="text" placeholder="Search" />
-						<img src="${contextPath }/resources/image/main/main_search/search.png"/>
-				</div>
-			</div>
-			<div class="hot_search">
-				<span>Currently Popular Searches</span>
-				<ul>
-					<li><button>코로나19</button></li>
-					<li><button>맛집</button></li>
-					<li><button>제주도</button></li>
-					<li><button>게임</button></li>
-					<li style="margin:0;"><button>Java</button></li>
-				</ul>
 			</div>
 		</div>
 

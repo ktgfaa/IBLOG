@@ -35,7 +35,7 @@
 								</li>
 								<li><button id="delBLOG">내 블로그 삭제</button></li>
 							</c:if>
-							<c:if test="${member.getRunblog() eq 'none' }">
+							<c:if test="${member.getRunblog() eq 'norun' }">
 								<li class="IBLOG_LI">
 									<img src="${contextPath }/resources/image/mypage/nonImage/nonB.jpg"/>
 									<p>개설된 블로그가 없습니다.</p>
